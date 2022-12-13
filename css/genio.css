@@ -1,6 +1,17 @@
 body {
     background-color: rgb(0, 0, 0);
     }
-h1 {
-    font:'Monoton';
+#Menu_cabecera{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#Boton_cabecera{
+    display: flex;
+    align-items: center;
+    background-color: red;
+    border-color: black;
+    border: 0.5ch;
+    padding: 10%;
 }
