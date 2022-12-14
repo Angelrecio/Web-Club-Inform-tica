@@ -24,16 +24,17 @@ video.addEventListener("ended", function() {
 
 var image = $('#intro_img');
 
+
 setTimeout(() => { 
   image.animate({
   width: '12%',
-  top: '10px'
+  top: '10px',
+  marginBottom: "0"
   }, 500);
  }, 1000);
 
  setTimeout(() => { 
-  navUl = document.getElementById("Menu_cabecera");
-  navUl.style.display="flex";
+  
   logo_uem = document.getElementById("logo_uem");
   logo_uem.style.display="block";
  }, 1500);
