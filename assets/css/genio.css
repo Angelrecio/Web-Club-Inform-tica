@@ -2,14 +2,13 @@ body {
     background-color: rgb(42, 42, 42);
 }
 
-#intro_video{
+.intro{
     margin: 0;
     width: 100%;
 }
 
 #intro_img{
-    margin: 0;
-    width: 100%;
+    text-align: center;
 }
 
 
@@ -44,3 +43,4 @@ h1 {
     width: 20%;
     padding: 0.5%;
 }
+
