@@ -3294,3 +3294,12 @@ input, select, textarea {
 				}
 
 	}
+
+	#logo_cint{
+		width: 7%;
+	}
+
+	#contenedor_logo_cint{
+		background-color: white;
+		border-radius: 50%;
+	}
