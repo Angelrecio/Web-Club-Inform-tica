@@ -29,12 +29,14 @@ setTimeout(() => {
   width: '12%',
   top: '10px'
   }, 500);
+ }, 1000);
 
+ setTimeout(() => { 
   navUl = document.getElementById("Menu_cabecera");
   navUl.style.display="flex";
   logo_uem = document.getElementById("logo_uem");
   logo_uem.style.display="block";
- }, 1000);
+ }, 1500);
 
 
 
