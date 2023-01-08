@@ -33,7 +33,7 @@
 						</div>
 					</section>
 					<section class="feature right">
-						<a href="#" class="image icon solid fa-code"><img src="images/header2.png" alt="" /></a>
+						<a href="talleres.php" class="image icon solid fa-code"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>Programacion competitiva</h3>
 							<p>Si te gusta llevar tus conocimientos de algoritmia al siguiente nivel, este es tu sitio.</p>
