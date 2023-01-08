@@ -1,15 +1,14 @@
 <?php
-$host = "localhost:8889";
-$user = "root";
-$pass = "root";
-$bbdd = "c-int";
+$host = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "c-int";
 
-$conn = new mysqli($host, $user, $pass, $database);
+// Crea la conexión con la base de datos
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
-
+// Verifica la conexión
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "conectado";
-
 ?>

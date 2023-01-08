@@ -14,17 +14,30 @@
 <body>
     <h1>Talleres</h1>
     <?php
-        echo "0 <br>";
-        $ask = "SELECT * FROM talleres";
-        echo $ask."<br>";
-        $query = $conn -> query ($ask);
-        while ($valores = mysqli_fetch_array($query)) {
-                        
-            echo '<p>'.$valores["titulo"].'</p>';
+        // Realiza la consulta a la base de datos
+        $query = "SELECT * FROM talleres";
+        $result = mysqli_query($conn, $query);
+
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+                // Muestra los datos de cada fila
+                echo "Título: " . $row["titulo"] . "<br>";
+                echo "Descripción: " . $row["descripción"] . "<br>";
+                echo "Fecha de publicación: " . $row["Fecha-publicacion"] . "<br>";
+                echo "Fecha de realización: " . $row["fecha-realizacion"] . "<br>";
+                echo "Sección: " . $row["seccion"] . "<br>";
+                echo "Capacidad: " . $row["capacidad"] . "<br>";
+                echo "Aula: " . $row["Aula"] . "<br>";
+                echo "<hr>";
+            }
+        } else {
+            echo "No se encontraron resultados";
         }
 
-        echo 2;
-        $conn -> close();
+        // Cierra la conexión con la base de datos
+        mysqli_close($conn);
     ?>
 </body>
 </html>
