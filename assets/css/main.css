@@ -3309,3 +3309,39 @@ input, select, textarea {
 	.nosotros{
 		margin: 0 15%;
 	}
+	#Menu_cabecera{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.Boton_cabecera{
+		display: flex;
+		align-items: center;
+		background-color: #fe2f2f;
+		border-color: rgb(183, 0, 255);
+		border: 100ch;
+		padding: 1.2%;
+		margin: 1%;
+		color:rgb(255, 255, 255);
+	}
+	.actividades_en_curso{
+		font-size: 150%;
+		margin: 1%;
+		width : auto;
+		height : 100%;
+		background-color: rgb(247, 235, 235);
+	}
+	.elemento{
+		background-color: whitesmoke;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+	}
+	.presentacion{
+	
+		font-size: 150%;
+	
+	}
+	.imagen_descripcion{}
+	.texto_descripcion{
+	}
