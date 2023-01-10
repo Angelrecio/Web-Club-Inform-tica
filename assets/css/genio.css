@@ -40,6 +40,7 @@ h2 {
     padding: 1.2%;
     margin: 1%;
 }
+
 .Content_logo{
     display: flex;
     justify-content: space-between;
@@ -76,6 +77,11 @@ a:hover{
     text-decoration:dotted;
     color: white;
 }
+
+a:focus{
+    color: white;
+}
+
 .proyectos_en_curso{
     margin: 1%;
 	width : auto;
@@ -96,4 +102,16 @@ a:hover{
 }
 .titulo{
     padding: 1%;
+}
+
+.presentacion{
+    display:none;
+}
+
+.proyectos_en_curso{
+    display:none;
+}
+
+.presentacion:focus{
+    display:contents;
 }
