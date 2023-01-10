@@ -27,8 +27,12 @@ body {
 	line-height: 1;
 }
 
-ol, ul {
+ol {
 	list-style: none;
+}
+
+ul{
+	list-style: circle black;
 }
 
 blockquote, q {
@@ -3342,6 +3346,9 @@ input, select, textarea {
 		font-size: 150%;
 	
 	}
-	.imagen_descripcion{}
-	.texto_descripcion{
+	
+	.nosotros{
+		text-align:center;
+		background-color: #fff;
+		padding: 15 0;
 	}

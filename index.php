@@ -20,7 +20,14 @@
 
 				<div class="nosotros">
 					<h2>¿Quienes somos?</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nisi laborum quae, facere possimus, explicabo porro fugiat minus ab itaque minima id quia consectetur voluptas expedita autem consequatur corporis dolores?</p>
+					<p>Desarrollamos sistemas mediante tecnologías informáticas. Algunas de nuestras lineas de proyectos son:</p>
+					<ul>
+						<li>IoT</li>
+						<li>Cloud computing</li>
+						<li>Ciberseguridad y criptología</li>
+						<li>Sistemas de Visión con drones</li>
+					</ul>
+					<p>También participamos en concursos de programación como Hackatones o Datatones y organizamos nuestras "Code&Coffee", charlas con ponentes expertos en temas de inovación tecnológica.</p>
 				</div>
 
 				<div class="box alt container">

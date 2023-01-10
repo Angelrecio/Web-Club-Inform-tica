@@ -1,4 +1,5 @@
 <?php
+    // importar el archivo de conexion con la base de datos
     require "assets/request/conexion.php"
 ?>
 
@@ -36,7 +37,7 @@
             echo "No se encontraron resultados";
         }
 
-        // Cierra la conexión con la base de datos
+        // Cierra la conexion con la base de datos
         mysqli_close($conn);
     ?>
 </body>
