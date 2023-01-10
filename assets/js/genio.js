@@ -46,11 +46,13 @@ setTimeout(() => {
 
 document.getElementById('present').onclick=function(){
   document.getElementById('proyect').style.display = '';
+  document.getElementById('propuesta').style.display = '';
   document.getElementById('presentac').style.display = 'block';
 };
 
 document.getElementById('proyec_curso').onclick=function(){
   document.getElementById('presentac').style.display = '';
+  document.getElementById('propuesta').style.display = '';
   document.getElementById('proyect').style.display = 'block';
 };
 
