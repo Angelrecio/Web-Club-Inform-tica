@@ -53,3 +53,9 @@ document.getElementById('proyec_curso').onclick=function(){
   document.getElementById('presentac').style.display = '';
   document.getElementById('proyect').style.display = 'block';
 };
+
+document.getElementById('propues').onclick=function(){
+  document.getElementById('presentac').style.display = '';
+  document.getElementById('proyect').style.display = '';
+  document.getElementById('propuesta').style.display = 'block';
+};

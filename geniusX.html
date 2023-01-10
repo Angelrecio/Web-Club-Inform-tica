@@ -24,7 +24,7 @@
         <a class = Boton_cabecera id="present" href="#presentacion" >Inicio</i></a>
         <a class = Boton_cabecera href="">Proyectos anteriores</a>
         <a class = Boton_cabecera id="proyec_curso" href="#proyectos_en_curso">Proyectos en curso</a>
-        <a class = Boton_cabecera href="">Proponer proyecto</a>
+        <a class = Boton_cabecera id="propues" href="#proponer_proyecto">Proponer proyecto</a>
         <a class = Boton_cabecera href="/">Volver a C-Int</a>        
     </nav> <br>
 <div class = presentacion id="presentac">
@@ -43,6 +43,23 @@
             <p>Con la luz del camino somos capaces de </p>
         </div>
     </div>
+</div>
+<br>
+<div class = proponer_proyecto id="propuesta">
+    <h1>Propuesta de proyecto</h1>
+    <p>
+        <form method="post" action="procesa1.php">
+            <label for="" style="color: aliceblue;">Nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="" style="color: aliceblue;">Correo:</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="" style="color: aliceblue;">Propuesta:</label>
+            <input type="text" name="text" id="texto_propuesta">
+            <input type="submit" name="enviar" id="enviar">
+        </form>
+    </p>
 </div>
 </body>
 
