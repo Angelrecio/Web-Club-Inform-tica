@@ -1,6 +1,7 @@
 // obtenemos una referencia al elemento video
 var video = document.getElementById("intro_video");
 
+document.getElementById('presentac').style.display = 'block';
 
     
 // agregamos un evento que se ejecutará cuando el video finalice su reproducción
