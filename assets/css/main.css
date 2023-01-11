@@ -1657,12 +1657,12 @@ input, select, textarea {
 						}
 
 				.row {
-					margin-top: -230px;
+					margin-top: -20px;
 					margin-left: -20px;
 				}
 
 					.row > * {
-						padding: 230px 0 0 20px;
+						padding: 20px 0 0 20px;
 					}
 
 					.row.gtr-uniform {
@@ -2076,7 +2076,6 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	input[type="n_expediente"],
 	select,
 	textarea {
 		-moz-appearance: none;
