@@ -1,5 +1,7 @@
-<!--
 <?php
+
+require "assets/request/conexion.php";
+
 session_start();
 
 $username = "";
@@ -10,13 +12,7 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Conectar a la base de datos
-    $conn = mysqli_connect("host", "username", "password", "database");
 
-    // Verificar conexión
-    if (!$conn) {
-        die("Conexión fallida: " . mysqli_connect_error());
-    }
 
     // Escapar caracteres especiales en el nombre de usuario y la contraseña
     $username = mysqli_real_escape_string($conn, $username);
@@ -36,7 +32,7 @@ if (isset($_POST['submit'])) {
 
     mysqli_close($conn);
 }
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html>
