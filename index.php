@@ -10,6 +10,11 @@
 
 		<!-- Header -->
 			<div id="header">
+				<div id = in_cabeza>
+					<a class = "Boton_in" href = "login.php">Log in</a>
+					<a class = "Boton_in" href = "signin.php">Sign in</a>
+				</div>
+				<br>
 				<span id="contenedor_logo_cint"><img id=logo_cint src="assets/img/ue_logoclub_cmyk_11_c_int.png"></span>
 				<h1>C-INT</h1>
 				<p><h2>El club de informatica y nuevas tecnologias.</h2></p>
@@ -33,14 +38,14 @@
 				<div class="box alt container">
 					<h2>Nuestras secciones</h2>
 					<section class="feature left">
-						<a href="Hacknet.html" class="image icon solid fa-signal"><img src="images/header2.png" alt="" /></a>
+						<a href="#" class="image icon solid fa-signal"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>Hacknet</h3>
 							<p>Un equipo de estudiantes enamorados de la seguridad informatica que se reunen para practicar y aprender nuevas tecnicas de pentesting.</p>
 						</div>
 					</section>
 					<section class="feature right">
-						<a href="ProgramacionCompetitiva.html" class="image icon solid fa-code"><img src="images/header2.png" alt="" /></a>
+						<a href="talleres.php" class="image icon solid fa-code"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>Programacion competitiva</h3>
 							<p>Si te gusta llevar tus conocimientos de algoritmia al siguiente nivel, este es tu sitio.</p>
@@ -73,7 +78,7 @@
 								<input type="text" name="name" placeholder="Nombre completo" />
 							</div>
 							<div class="col-6 col-12-mobilep">
-								<input type="text" name="n_expediente" placeholder="n_expediente" />
+								<input type="n_expediente" name="n_expediente" placeholder="n_expediente" />
 							</div>
 							<div class="col-6 col-12-mobilep">
 								<input type="email" name="email" placeholder="Email" />
