@@ -3320,9 +3320,7 @@ input, select, textarea {
 	.Boton_cabecera{
 		display: flex;
 		align-items: center;
-		background-color: #fe2f2f;
-		border-color: rgb(183, 0, 255);
-		border: 100ch;
+		background-color: rgb(222, 56, 49);
 		padding: 1.2%;
 		margin: 1%;
 		color:rgb(255, 255, 255);
@@ -3350,4 +3348,23 @@ input, select, textarea {
 		text-align:center;
 		background-color: #fff;
 		padding: 15 0;
+	}
+	#in_cabeza{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		align-self:start;
+		justify-content: end;
+	}
+	#logo_uem{
+		background-color: white;
+		display: none;
+	}
+	.Boton_in{
+		display: flex;
+		align-items: center;
+		background-color: rgb(222, 56, 49);
+		padding: 0.8%;
+		margin: 0.3%;
+		color:rgb(255, 255, 255);
 	}
