@@ -11,7 +11,7 @@
 		<!-- Header -->
 			<div id="header">
 				<div id = in_cabeza>
-					<a class = "Boton_in" href = "login.php">Log in</a>
+					<a class = "Boton_in" id="Boton_in" href = "login.php">Log in</a>
 				</div>
 				<br>
 				<span id="contenedor_logo_cint"><img id=logo_cint src="assets/img/ue_logoclub_cmyk_11_c_int.png"></span>
