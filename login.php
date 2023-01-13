@@ -1,5 +1,7 @@
-<!--
 <?php
+
+require "assets/request/conexion.php";
+
 session_start();
 
 $username = "";
@@ -10,13 +12,7 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Conectar a la base de datos
-    $conn = mysqli_connect("host", "username", "password", "database");
 
-    // Verificar conexión
-    if (!$conn) {
-        die("Conexión fallida: " . mysqli_connect_error());
-    }
 
     // Escapar caracteres especiales en el nombre de usuario y la contraseña
     $username = mysqli_real_escape_string($conn, $username);
@@ -36,7 +32,7 @@ if (isset($_POST['submit'])) {
 
     mysqli_close($conn);
 }
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -44,14 +40,24 @@ if (isset($_POST['submit'])) {
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
+<body style=" flex-direction: column; background-color: rgb(222, 56, 49);">
     <form method="post" action="login.php">
-        <div class = formulario_sesion>
-        <label for="username">Nombre de usuario</label>
-        <input type="text" name="username" id="username" required>
-        <label for="password">Contraseña</label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" name="submit" value="Iniciar sesión">
+        <div id = "log_pro">
+        <div id = footer_log>
+        <label for="username" class = "login">Nombre de usuario</label>
+        <br>
+        <input style="width: 50%;" type="text" name="username" class = "login" id="username" required>
+        <br>
+        <br>
+        <br>
+        <label for="password" class = "login">Contraseña</label>
+        <br>
+        <input style="width: 50%; " type="password" class = "login" name="password" id="password" required>
+        <br>
+        <br>
+        <br>
+        <input type="submit" class = "login" name="submit" value="Iniciar sesión">
+        </div>
         </div>
         <span><?php echo $error; ?></span>
     </form>

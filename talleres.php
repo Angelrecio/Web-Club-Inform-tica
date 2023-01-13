@@ -1,6 +1,6 @@
 <?php
     // importar el archivo de conexion con la base de datos
-    require "assets/request/conexion.php"
+    require "assets/request/conexion.php";
 ?>
 
 <!DOCTYPE html>
