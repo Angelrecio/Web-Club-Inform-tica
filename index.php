@@ -1,3 +1,7 @@
+<?php
+require "assets/request/conexion.php"
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -71,7 +75,7 @@
 
 					<p>Rellena el formulario para unirte al Club</p>
 
-					<form method="post" action="#">
+					<form method="post" action="assepeticion.php">
 						<div class="row">
 							<div class="col-12 col-12-mobilep">
 								<input type="text" name="name" placeholder="Nombre completo" />

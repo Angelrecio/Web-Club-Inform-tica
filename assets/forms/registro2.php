@@ -17,7 +17,7 @@ if (empty($name) || empty($surname1) || empty($n_exp) || empty($email) || empty(
 }
 
 // Encriptar la contraseña
-$password = password_hash($password, PASSWORD_DEFAULT);
+$password = md5($n_exp);
 
 // Consulta preparada para evitar inyección SQL
 $stmt = $db->prepare("INSERT INTO usuarios (nombre, apellido1, apellido2, n-exp, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)");
