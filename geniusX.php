@@ -1,6 +1,7 @@
 <?php
     // importar el archivo de conexion con la base de datos
     require "assets/request/conexion.php";
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +40,7 @@
 </div>
 <br>
 <div class = proyectos_anteriores id="proant">
-<?php /* 
+<?php
         // Realiza la consulta a la base de datos
     $query = "SELECT * FROM proyecto WHERE fecha_fin= NULL";
         $result = mysqli_query($conn, $query);
@@ -57,10 +58,10 @@
         } else {
             echo  "<p>No se encontraron resultados</p>";
         }
-   */ ?> 
+    ?> 
 </div>
 <div class = proyectos_en_curso id="proyect">
-<?php /*
+<?php 
         // Realiza la consulta a la base de datos
         $query = "SELECT * FROM proyecto WHERE fecha_fin != NULL";
         $result = mysqli_query($conn, $query);
@@ -81,7 +82,7 @@
 
         // Cierra la conexion con la base de datos
         mysqli_close($conn);
-*/    ?>
+    ?>
 </div>
 </div>
 <br>
@@ -101,7 +102,7 @@
             </div>
             <div class="col-12">
                 <ul class="actions special">
-                    <li><input type="submit" value="Enviar" /></li>
+                    <li><input type="submit" value="Enviar" name="submit"/></li>
                 </ul>
             </div>
         </div>

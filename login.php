@@ -1,7 +1,6 @@
 <?php
 
 require "assets/request/conexion.php";
-
 session_start();
 
 $username = "";
@@ -22,16 +21,23 @@ if (isset($_POST['submit'])) {
 
     // Consulta para comprobar si el usuario y la contraseña existen en la base de datos
     $query = "SELECT * FROM usuarios WHERE nexp='$n_exp' AND pass='$password_hash'";
-    echo $query;
+    //echo $query."<br>";
     $results = mysqli_query($conn, $query);
+    
 
-    if (mysqli_num_rows($results) == 1) {
-        // Iniciar sesión
-        $_SESSION['n_exp'] = $n_exp;
-        echo  $_SESSION['n_exp'];
-        header("Location: /");
-    } else {
+    if (mysqli_num_rows($results) > 0) {
+       
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($results)) {
+                // Muestra los datos de cada fila
+                $_SESSION['id'] = $row["id"];
+                $_SESSION['nombre'] = $row["nombre"];
+                $_SESSION['n-exp'] = $row["nexp"];
+            }
+            //header("Location: /");
+        } else {
         $error = "Nombre de usuario o contraseña incorrectos";
+        echo $error;
     }
 
     mysqli_close($conn);
@@ -45,6 +51,11 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body style=" flex-direction: column; background-color: rgb(222, 56, 49);">
+
+        <?php
+        
+		?>
+
     <?php 
     ?>
     <form method="post" action="login.php">

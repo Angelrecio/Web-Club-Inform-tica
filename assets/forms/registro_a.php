@@ -27,10 +27,12 @@ if (isset($_POST['submit'])) {
         // Execute the SQL statement
         if (mysqli_stmt_execute($stmt)) {
             echo "Usuario creado con éxito";
+            header("Location: /");
         } else {
             echo "Error: failed to execute the SQL statement";
+            header("Location: /registro");
         }
-        header("Location: /");
+        
     }
 }
 ?>
