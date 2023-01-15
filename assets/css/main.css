@@ -3314,7 +3314,7 @@ input, select, textarea {
 	#Menu_cabecera{
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-between;
 	}
 	.Boton_cabecera{
 		display: flex;
@@ -3323,6 +3323,7 @@ input, select, textarea {
 		padding: 1.2%;
 		margin: 1%;
 		color:rgb(255, 255, 255);
+		border-radius: 14%;
 	}
 	.actividades_en_curso{
 		font-size: 150%;
@@ -3354,10 +3355,6 @@ input, select, textarea {
 		align-items: flex-start;
 		align-self:start;
 		justify-content: end;
-	}
-	#logo_uem{
-		background-color: white;
-		display: none;
 	}
 	.Boton_in{
 		display: flex;
@@ -3408,4 +3405,7 @@ input, select, textarea {
 		justify-content: center;
 		width: 100%;
 		text-align: center;
+	}
+	.cabesa{
+		display: flex;
 	}
