@@ -92,7 +92,7 @@
     <form method="post" action="assets/forms/propuestas_genius.php">
         <div class="row">
             <div class="col-12 col-12-mobilep">
-                <input type="text" name="name" placeholder="Nombre" />
+                <input type="text" name="name" placeholder="Nombre del proyecto" />
             </div>
             <div class="col-12">
                 <textarea name="message" placeholder="Cuéntanos tu gran idea de proyecto" rows="6"></textarea>

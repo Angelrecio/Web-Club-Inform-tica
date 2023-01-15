@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
             header("Location: /");
         } else {
             echo "Error: failed to execute the SQL statement";
-            header("Location: /registro");
+            header("Location: /registro.php");
         }
         
     }
