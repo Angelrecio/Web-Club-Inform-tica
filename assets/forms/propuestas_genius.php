@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
         echo "Error: failed to prepare the SQL statement";
     } else {
         // Bind the parameters to the placeholders in the SQL statement
-        mysqli_stmt_bind_param($stmt, "iisisss", $id, $id_usuario, $nombre, $n_exp, $email, $password_hash, $role);
+        mysqli_stmt_bind_param($stmt, "iisisss", $id, $id_usuario, $nombre, $n_exp, $email, $ideaproyecto, $materiales);
 
         // Execute the SQL statement
         if (mysqli_stmt_execute($stmt)) {

@@ -55,7 +55,7 @@ require "assets/request/conexion.php"
 						</div>
 					</section>
 					<section class="feature left">
-						<a href="geniusX.html" class="image icon solid fa-tachometer-alt"><img src="images/header2.png" alt="" /></a>
+						<a href="geniusX.php" class="image icon solid fa-tachometer-alt"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>GeniusX</h3>
 							<p>Una lazadera de Starups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>
