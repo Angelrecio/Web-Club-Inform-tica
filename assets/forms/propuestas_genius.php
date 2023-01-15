@@ -1,5 +1,5 @@
 <?php
-include "assets/request/conexion.php";
+include "../request/conexion.php";
 
 if (isset($_POST['submit'])) {
     echo "<br>";
