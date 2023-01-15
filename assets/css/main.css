@@ -3321,9 +3321,13 @@ input, select, textarea {
 		align-items: center;
 		background-color: rgb(222, 56, 49);
 		padding: 1.2%;
+		padding-left: 2%;
+		padding-right: 2%;
 		margin: 1%;
 		color:rgb(255, 255, 255);
 		border-radius: 14%;
+		text-align: center;
+		text-size-adjust:inherit;
 	}
 	.actividades_en_curso{
 		font-size: 150%;
@@ -3409,3 +3413,9 @@ input, select, textarea {
 	.cabesa{
 		display: flex;
 	}
+.presentacion{
+	margin: 1.2%;
+}
+.descripcion{
+	margin: 1.2%;
+}
