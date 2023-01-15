@@ -45,20 +45,29 @@ setTimeout(() => {
 
 });
 
-document.getElementById('present').onclick=function(){
-  document.getElementById('proyect').style.display = '';
-  document.getElementById('propuesta').style.display = '';
-  document.getElementById('presentac').style.display = 'block';
-};
-
-document.getElementById('proyec_curso').onclick=function(){
-  document.getElementById('presentac').style.display = '';
-  document.getElementById('propuesta').style.display = '';
-  document.getElementById('proyect').style.display = 'block';
-};
-
-document.getElementById('propues').onclick=function(){
-  document.getElementById('presentac').style.display = '';
-  document.getElementById('proyect').style.display = '';
-  document.getElementById('propuesta').style.display = 'block';
-};
+$(document).ready(function(){
+  $("#present").click(function(){
+    $("#presentac").slideToggle("slow")
+    $("#propuesta").slideUp("slow")
+    $("#proyect").slideUp("slow")
+    $("#proant").slideUp("slow")
+  });
+  $("#proyecto_ant").click(function(){
+    $("#proant").slideToggle("slow")
+    $("#propuesta").slideUp("slow")
+    $("#proyect").slideUp("slow")
+    $("#presentac").slideUp("slow")
+  });
+  $("#proyec_curso").click(function(){
+    $("#proyect").slideToggle("slow")
+    $("#propuesta").slideUp("slow")
+    $("#proant").slideUp("slow")
+    $("#presentac").slideUp("slow")
+  });
+  $("#propues").click(function(){
+    $("#propuesta").slideToggle();
+    $("#proyect").slideUp("slow")
+    $("#proant").slideUp("slow")
+    $("#presentac").slideUp("slow")
+  });
+});

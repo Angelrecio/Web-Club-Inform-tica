@@ -82,6 +82,13 @@ a:focus{
     color: white;
 }
 
+.proyectos_anteriores{
+    margin: 1%;
+	width : auto;
+	height : 100%;
+    background-color: rgb(15, 15, 15);
+}
+
 .proyectos_en_curso{
     margin: 1%;
 	width : auto;
@@ -96,9 +103,7 @@ a:focus{
     background-color: rgb(15, 15, 15);
 }
 
-.elemento{
-    background-color: rgb(53, 53, 52);
-}
+
 .logo_proyecto{
     height: 70px;
 }
@@ -112,15 +117,7 @@ a:focus{
     padding: 1%;
 }
 
-.presentacion{
-    display:none;
-}
-
-.proyectos_en_curso{
-    display:none;
-}
-
-.proponer_proyecto{
+#proant, #proyect, #propuesta {
     display: none;
 }
 
@@ -151,3 +148,4 @@ input[type="submit"]{
 label{
     color: aliceblue;
 }
+
