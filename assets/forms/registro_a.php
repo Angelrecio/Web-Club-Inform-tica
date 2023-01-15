@@ -1,5 +1,5 @@
 <?php
-include "assets/request/conexion.php";
+require "../request/conexion.php";
 
 
 if (isset($_POST['submit'])) {
