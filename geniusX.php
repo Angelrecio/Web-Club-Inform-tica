@@ -61,16 +61,10 @@
 <div class = proponer_proyecto id="propuesta">
     <h1>Propuesta de proyecto</h1>
 
-    <form method="post" action="#">
+    <form method="post" action="assets/forms/propuestas_genius.php">
         <div class="row">
             <div class="col-12 col-12-mobilep">
-                <input type="text" name="name" placeholder="Nombre completo" />
-            </div>
-            <div class="col-6 col-12-mobilep">
-                <input type="text" name="n_expediente" placeholder="n_expediente" />
-            </div>
-            <div class="col-6 col-12-mobilep">
-                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="name" placeholder="Nombre" />
             </div>
             <div class="col-12">
                 <textarea name="message" placeholder="Cuéntanos tu gran idea de proyecto" rows="6"></textarea>
@@ -87,6 +81,7 @@
     </form>
 </div>
 </body>
+
 
 
 <script src="assets/js/genio.js"></script>
