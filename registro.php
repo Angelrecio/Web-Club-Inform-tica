@@ -5,7 +5,7 @@
 </head>
     <body>
     <h1>Sign In</h1>
-    <form action="registro_a.php" method="post">
+    <form action="assets/forms/registro_a.php" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
         <br>

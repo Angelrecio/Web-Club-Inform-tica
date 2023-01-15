@@ -3398,24 +3398,28 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 	}
+
+
 	.login{
 		color: white;
 		width: fit-content;
 		
-		
 	}
+
 	#log_pro{
 		display: flex;
 		justify-content: center;
 		width: 100%;
 		text-align: center;
 	}
+	
 	.cabesa{
 		display: flex;
 	}
-.presentacion{
-	margin: 1.2%;
-}
-.descripcion{
-	margin: 1.2%;
-}
+
+	.presentacion{
+		margin: 1.2%;
+	}
+	.descripcion{
+		margin: 1.2%;
+	}
