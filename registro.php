@@ -26,10 +26,6 @@
         <input type="email" id="email" name="email" required>
         <br>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-
         <label for="role">Rol:</label>
         <input type="number" id="role" name="role" required>
         <br>
