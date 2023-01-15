@@ -23,6 +23,9 @@ session_start();
 					echo '</div>';
 				}else{
 					echo "<div id = in_cabeza>";
+					if($_SESSION['rol'] == 1){
+						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php">Administrar</a>';
+					}
 					echo '<a class = "Boton_in" id="Boton_in" href = "logout.php">Log out</a>';
 					echo '</div>';
 				}

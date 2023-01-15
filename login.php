@@ -33,8 +33,9 @@ if (isset($_POST['submit'])) {
                 $_SESSION['id'] = $row["id"];
                 $_SESSION['nombre'] = $row["nombre"];
                 $_SESSION['n-exp'] = $row["nexp"];
+                $_SESSION['rol'] = $row["rol"];
             }
-            //header("Location: /");
+            header("Location: /");
         } else {
         $error = "Nombre de usuario o contraseña incorrectos";
         echo $error;
