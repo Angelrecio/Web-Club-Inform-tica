@@ -3314,7 +3314,7 @@ input, select, textarea {
 	#Menu_cabecera{
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 	.Boton_cabecera{
 		display: flex;
