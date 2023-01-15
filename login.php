@@ -18,10 +18,11 @@ if (isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($conn, $username);
     $password = mysqli_real_escape_string($conn, $password);
 
-    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    $password_hash = md5($password);
 
     // Consulta para comprobar si el usuario y la contraseña existen en la base de datos
     $query = "SELECT * FROM usuarios WHERE nexp='$n_exp' AND pass='$password_hash'";
+    echo $query;
     $results = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($results) == 1) {
