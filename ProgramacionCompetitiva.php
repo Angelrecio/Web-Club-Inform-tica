@@ -24,14 +24,30 @@
 </div>
 <br>
 <div class = actividades_en_curso>
-    <h1>Proyectos</h1>
-    <div class = elemento>
-        <h2 class=titulo>CDS HPE</h2>
-        <div class = descripcion>
-            <img class = imagen_descripcion href = "assets/img/HPE.png">
-            <p class = texto_descripcion>En el concurso organizado por HPE CDS se pone a prueba todos los conocimientos de informática a través de pequeños problemas, HPE nos pone a prueba con sus retos haciendo que hagamos desde algoritmia básica a aprender a investigar una máquina virtual.</p>
-        </div>
+<?php
+        // Realiza la consulta a la base de datos
+        $query = "SELECT * FROM ranked";
+        $result = mysqli_query($conn, $query);
+
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+              // Muestra los datos de cada fila
+            echo "<div class = elemento>";
+            echo "<h2 class=titulo>". $row["titulo"] . "</h2>";
+            echo "<p class = texto_descripcion>".$row["descripcion"]."</p>";
+            echo "<a href="$row["enlace"]." class = boton_join>Únete</a> ";             
+            }
+        } else {
+            echo "<p>No se encontraron resultados</p>";
+        }
+
+        // Cierra la conexion con la base de datos
+        mysqli_close($conn);
+    ?>
     </div>
 </div>
+<br>
 </body>
 </html>

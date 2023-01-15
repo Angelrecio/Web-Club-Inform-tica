@@ -23,11 +23,29 @@
 </div>
 <br>
 <div class = actividades_en_curso>
+<?php
+        // Realiza la consulta a la base de datos
+        $query = "SELECT * FROM hacknet";
+        $result = mysqli_query($conn, $query);
+
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+              // Muestra los datos de cada fila
+            echo "<div class = elemento>";
+            echo "<h2 class=titulo>". $row["titulo"] . "</h2>";
+            echo "<p class = texto_descripcion>".$row["descripcion"]."</p>";
+            echo "<a href="$row["enlace"]." class = boton_join>Únete</a> </div> ";               
+            }
+        } else {
+            echo "<p>No se encontraron resultados</p>";
+        }
+
+        // Cierra la conexion con la base de datos
+        mysqli_close($conn);
+    ?>
     <h1 style="margin: 1.2%;">Proyectos</h1>
-    <div class = elemento>
-        <h2 class=titulo>Hacknet</h2>
-        <div class = descripcion>
-            <img class = imagen_descripcion href = "assets/img/HPE.png">
-            <p class = texto_descripcion>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida libero et sem mollis, at mollis risus posuere. Vestibulum a arcu magna. Maecenas nec leo eu dolor tincidunt elementum. Cras ornare non leo quis sollicitudin. Curabitur posuere augue at massa luctus consequat. Sed augue nulla, posuere id elit vitae, lacinia efficitur ante. Sed pellentesque porttitor pharetra. Vestibulum tincidunt justo vel quam aliquet malesuada. Suspendisse pellentesque risus eu finibus vehicula. Sed in arcu lectus.</div>
+    
 </body>
 </html>
