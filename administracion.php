@@ -1,19 +1,7 @@
-<?php
-    session_start();
- 
-    // Compruebe si el usuario ha iniciado sesión
-    if (!isset($_SESSION['nombreUsuario'])) {
-        header("location: login.php");
-        exit;
-    }
- 
-    // Conexión a la base de datos
-    $db = mysqli_connect("localhost", "admin", "password", "baseDatos");
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
+    <a class = Boton_cabecera href="/">Volver a C-Int</a>    
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
     <title>Administración</title>
     <style type="text/css">
