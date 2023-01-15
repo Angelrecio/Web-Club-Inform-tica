@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     $role = $_POST['role'];
     
     // Crear un hash de contraseña
-    $password_hash = password_hash($n_exp, PASSWORD_DEFAULT);
+    $password_hash = md5($n_exp);
 
     // Prepare the SQL statement
     $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, nexp, email, pass, rol) VALUES (?, ?, ?, ?, ?, ?, ?)";
