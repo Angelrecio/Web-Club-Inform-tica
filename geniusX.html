@@ -61,16 +61,29 @@
 <div class = proponer_proyecto id="propuesta">
     <h1>Propuesta de proyecto</h1>
 
-    <form method="post" action="procesa1.php">
-        <label>Nombre:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre del proyecto">
-        <br>
-        <label>descripcion:</label>
-        <input type="message" name="descripcion" id="descripcion_form" placeholder="Descripcion del proyecto">
-        <br>
-        <label>Material necesario:</label>
-        <input type="text" name="material" id="material" placeholder="Material ej:Arduino, sensores, servidores, etc">
-        <input type="submit" name="enviar" id="enviar">
+    <form method="post" action="#">
+        <div class="row">
+            <div class="col-12 col-12-mobilep">
+                <input type="text" name="name" placeholder="Nombre completo" />
+            </div>
+            <div class="col-6 col-12-mobilep">
+                <input type="text" name="n_expediente" placeholder="n_expediente" />
+            </div>
+            <div class="col-6 col-12-mobilep">
+                <input type="email" name="email" placeholder="Email" />
+            </div>
+            <div class="col-12">
+                <textarea name="message" placeholder="Cuéntanos tu gran idea de proyecto" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+                <textarea name="message2" placeholder="Material necesario" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+                <ul class="actions special">
+                    <li><input type="submit" value="Enviar" /></li>
+                </ul>
+            </div>
+        </div>
     </form>
 </div>
 </body>
