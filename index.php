@@ -41,21 +41,21 @@ require "assets/request/conexion.php"
 				<div class="box alt container">
 					<h2>Nuestras secciones</h2>
 					<section class="feature left">
-						<a href="Hacknet.html" class="image icon solid fa-signal"><img src="images/header2.png" alt="" /></a>
+						<a href="Hacknet.php" class="image icon solid fa-signal"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>Hacknet</h3>
 							<p>Un equipo de estudiantes enamorados de la seguridad informatica que se reunen para practicar y aprender nuevas tecnicas de pentesting.</p>
 						</div>
 					</section>
 					<section class="feature right">
-						<a href="ProgramacionCompetitiva.html" class="image icon solid fa-code"><img src="images/header2.png" alt="" /></a>
+						<a href="ProgramacionCompetitiva.php" class="image icon solid fa-code"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>Programacion competitiva</h3>
 							<p>Si te gusta llevar tus conocimientos de algoritmia al siguiente nivel, este es tu sitio.</p>
 						</div>
 					</section>
 					<section class="feature left">
-						<a href="geniusX.html" class="image icon solid fa-tachometer-alt"><img src="images/header2.png" alt="" /></a>
+						<a href="geniusX.php" class="image icon solid fa-tachometer-alt"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>GeniusX</h3>
 							<p>Una lazadera de Starups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>

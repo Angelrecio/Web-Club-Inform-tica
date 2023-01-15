@@ -29,5 +29,6 @@
         <div class = descripcion>
             <img class = imagen_descripcion href = "assets/img/HPE.png">
             <p class = texto_descripcion>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida libero et sem mollis, at mollis risus posuere. Vestibulum a arcu magna. Maecenas nec leo eu dolor tincidunt elementum. Cras ornare non leo quis sollicitudin. Curabitur posuere augue at massa luctus consequat. Sed augue nulla, posuere id elit vitae, lacinia efficitur ante. Sed pellentesque porttitor pharetra. Vestibulum tincidunt justo vel quam aliquet malesuada. Suspendisse pellentesque risus eu finibus vehicula. Sed in arcu lectus.</div>
+<br>
 </body>
 </html>
