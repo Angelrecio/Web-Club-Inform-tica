@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Talleres</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <h1>
+        Administración
+    </h1>
+    <nav id = Menu_cabecera>
+        <a class = Boton_cabecera id="taller" href="#talleres" >Talleres</i></a>
+        <a class = Boton_cabecera id="proyecto_ant" href="#Hacknet">Hacknet</a>
+        <a class = Boton_cabecera id="proyec_curso" href="#Programacion_Competitiva">Programación competitiva</a>
+        <a class = Boton_cabecera id="proyec_curso" href="#Ver_usuarios_talleres">Programación competitiva</a>
+        <a class = Boton_cabecera href="/">Volver a C-Int</a>
+    </nav> <br>
+<div class = talleres id="tallerSub">
+    <h1>Presentación:</h1>
+    <br><br>
+    <p>GeniusX es una lanzadera de startups promovida por el club de informática de la Universidad Europea de Madrid</p> 
+    <p>Con GeniusX pretendemos que todos los alumnos que tengan un proyecto en mente puedan llevarlo a cabo junto otros compañeros y así aprender, innovar y tener una primera toma de contacto con el mundo laboral. Todos los alumnos tienen voz y voto incluyendo algunos que deseen asomarse en el mundo de la informática aun sin ser expresamente de una carrera relacionada con el ámbito, con esto, y enseñando desde 0 a través de talleres a los alumnos podemos dar accesibilidad al desarrollo de proyectos además de la visibilidad que nos da la Universidad Europea</p>
+</div>
+<br>
+<div class = Hacknet id="HacknetSub">
+
+</div>
+<div class = Programacion_Competitiva id="Programacion_CompetitivaSub">
+
+</div>
+<br>
+<div class = proponer_proyecto id="propuesta">
+    <h1>Propuesta de proyecto</h1>
+
+    <form method="post" action="assets/forms/propuestas_genius.php">
+        <div class="row">
+            <div class="col-12 col-12-mobilep">
+                <input type="text" name="name" placeholder="Nombre del proyecto" />
+            </div>
+            <div class="col-12">
+                <textarea name="message" placeholder="Cuéntanos tu gran idea de proyecto" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+                <textarea name="message2" placeholder="Material necesario" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+                <ul class="actions special">
+                    <li><input type="submit" value="Enviar" name="submit"/></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+
+
+<script src="../assets/js/admin.js"></script>
+</html>

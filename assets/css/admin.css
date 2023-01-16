@@ -1,0 +1,202 @@
+@import url("fontawesome-all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    
+}
+
+.intro{
+    margin: 0;
+    margin-bottom: 50em;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    
+}
+
+#Menu_cabecera{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+h1 {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: #fe2f2f;
+    text-align: center;
+}
+h2 {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: #fe2f2f;
+}
+.Boton_cabecera{
+    display: flex;
+    align-items: center;
+    background-color: #fe2f2f;
+    border-color: rgb(183, 0, 255);
+    border: 100ch;
+    padding: 1.2%;
+    margin: 1%;
+}
+
+.Content_logo{
+    display: flex;
+    justify-content: space-between;
+    margin: 0%;
+
+}
+
+#logo_uem{
+    background-color: white;
+    display: none;
+}
+.logo{
+    width: auto;
+    height: 40px;
+    padding: 0.5%;
+    margin-top: 10px;
+}
+p{
+    color: white;
+}
+.presentacion{
+    margin: 1%;
+	width : auto;
+	height : 100%;
+    background-color: rgb(15, 15, 15);
+    padding: 1%;
+}
+a{
+    text-decoration: none;
+    color: black;
+
+}
+a:hover{
+    text-decoration:dotted;
+    color: white;
+}
+
+a:focus{
+    color: white;
+}
+
+.proyectos_anteriores{
+    margin: 1%;
+	width : auto;
+	height : 100%;
+    background-color: rgb(15, 15, 15);
+}
+
+.proyectos_en_curso{
+    margin: 1%;
+	width : auto;
+	height : 100%;
+    background-color: rgb(15, 15, 15);
+}
+
+.proponer_proyecto{
+    margin: 1%;
+	width : auto;
+	height : 100%;
+    background-color: rgb(15, 15, 15);
+}
+
+
+.logo_proyecto{
+    height: 70px;
+}
+.descripcion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+.titulo{
+    padding: 1%;
+}
+
+#proant, #proyect, #propuesta {
+    display: none;
+}
+
+.presentacion:focus{
+    display:contents;
+}
+
+form {
+    margin: 0 auto;
+    width: 350px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+   
+  div.row {
+    margin: 1em 0;
+  }
+   
+  div.row > div {
+    margin: 0.5em 0;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #999;
+  }
+   
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #000;
+  }
+   
+  textarea {
+    height: 5em;
+    resize: vertical;
+  }
+   
+  ul.actions {
+    margin: 2em 0;
+  }
+
+input[type="text"]{
+    width: 98%;
+}
+
+
+input[type="submit"]{
+    align-items: center;
+    background-color: #fe2f2f;
+    border-color: rgb(183, 0, 255);
+    border: 100ch;
+    padding: 1.2%;
+    margin: 1%;
+
+}
+
+
+label{
+    color: aliceblue;
+}
+.boton_join{
+    background-color: rgb(222, 56, 49);
+    padding: 0.8%;
+    margin: 0 2%;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    transition: all 0.5s;
+    display: flex;
+    align-self: flex-end;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #999;
+  background-color: #eee;
+}
