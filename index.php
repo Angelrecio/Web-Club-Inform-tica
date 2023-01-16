@@ -16,7 +16,7 @@ session_start();
 		<!-- Header -->
 			<div id="header">
 				<div id = in_cabeza>
-				<a class = "Boton_in icon solid fa-user" id="Boton_in" href = ""></a>
+					
 
 			<?php
 				if (!isset($_SESSION['id'])){
@@ -26,6 +26,7 @@ session_start();
 					if($_SESSION['rol'] == 1){
 						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php.php">Administrar</a>';
 					}
+					echo '<a class = "Boton_in" id="Boton_in" href = "cambioPass.php">Cambiar contraseña</a>';
 					echo '<a class = "Boton_in" id="Boton_in" href = "logout.php">Log out</a>';
 				}
 			?>
