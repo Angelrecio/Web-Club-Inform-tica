@@ -10,17 +10,30 @@
     
 </head>
 <body>
-    <nav id = Menu_cabecera>
-        <a href="index.php" class="Boton_cabecera" style="width: 5%; padding: 0%; align-self: start; background-color: rgb(255, 255, 255);"> <img id=logo_club src="\assets\img\ue_logoclub_cmyk_11_c_int.png" style="width: 100%; padding: 0%; align-self: start;"></a>
-        <a class = Boton_cabecera href="Hacknet.php">Hacknet</a>
-        <a class = Boton_cabecera href="ProgramacionCompetitiva.php">Programacion<br>competitiva</a>
-        <a class = Boton_cabecera href="geniusX.php">GeniusX</a>        
-    </nav> <br>
+    
+<a href="index.php" class="Boton_cabecera" style="width: 5%; padding: 0%; align-self: start; background-color: rgb(255, 255, 255);"> <img id=logo_club src="\assets\img\ue_logoclub_cmyk_11_c_int.png" style="width: 100%; padding: 0%; align-self: start;"></a>
+<button>Menu</button>
+<section class ="container">
+<div class = "sidebar">
+<div class = "side-hide">
+<i class="fa fa-times" aria-hidden="true"></i>
+</div>
+<ul>
+  <li><a class="menu-item" href="Hacknet.php">Hacknet</a></li>
+  <li><a class="menu-item" href="ProgramacionCompetitiva.php">Programacion competitiva</a></li>
+  <li><a class="menu-item" href="geniusX.php">GeniusX</a></li>
+
+</ul>
+</div>
+ <br>
 <div class = presentacion>
     <h1>Presentación:</h1>
     <br><br>
     <p>Hacknet es el apartado del club de informática encargado de enseñar todo aquello relacionado con la ciberseguridad, una rama de la informática que consideramos realmente importante, por ello realizamos una serie de talleres que parten desde 0.</p> 
 </div>
+<div class = "content">
+    
+
 <br>
 <div class = actividades_en_curso>
     <h1 style="margin: 1.2%;">Proyectos</h1>
@@ -47,6 +60,25 @@
             mysqli_close($conn);
         ?>
     
-    
+</div>   
+</div>    
 </body>
+<!-- JS Script -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script>
+
+  // Muestra SideBar
+  $('button').on('click', function() {
+    $(".container").toggleClass('show');
+  })
+
+  // Oculta SideBar
+  $('.side-hide').on('click', function() {
+    $(".container").toggleClass('show');
+  });
+  
+
+</script>
+</section>
 </html>
