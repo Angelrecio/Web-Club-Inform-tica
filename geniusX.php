@@ -3,7 +3,7 @@
     if($_COOKIE[$cookie_name]) {
         header("Location: geniusXlight.php");
       } else {
-        setcookie($cookie_name, true, time() + (3600*24), "/"); // 86400 = 1 day
+        setcookie($cookie_name, true, time() + (3600*24), "/"); // 1 day
       }
 
     // importar el archivo de conexion con la base de datos
@@ -96,6 +96,10 @@
 <div class = proponer_proyecto id="propuesta">
     <h1>Propuesta de proyecto</h1>
 
+    <?php
+        if (isset($_SESSION['id'])){
+    ?>
+
     <form method="post" action="assets/forms/propuestas_genius.php">
         <div class="row">
             <div class="col-12 col-12-mobilep">
@@ -114,6 +118,14 @@
             </div>
         </div>
     </form>
+
+    <?php
+
+        }else{
+            echo "<p>Inicia sesion para proponer proyecto</p>";
+        }
+
+    ?>
 </div>
 </body>
 

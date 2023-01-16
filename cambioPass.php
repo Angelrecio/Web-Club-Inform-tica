@@ -1,13 +1,15 @@
 <?php
 
+if (isset($_COOKIE["Block"])){
+	echo "Demasiados logins fallidos, vuelve en 10 minutos";
+}
+
 require "assets/request/conexion.php";
 session_start();
 
 $error = "";
-echo 0;
-print_r($_POST);
+
 if (isset($_POST['submit'])) {
-    echo 1;
     $actual = $_POST['actual'];
     $nueva = $_POST['nueva'];
     $confirmar = $_POST['confirmar'];
@@ -17,16 +19,15 @@ if (isset($_POST['submit'])) {
     $actual = md5(mysqli_real_escape_string($conn, $actual));
     $nueva = mysqli_real_escape_string($conn, $nueva);
     $confirmar = mysqli_real_escape_string($conn, $confirmar);
-
     $id = $_SESSION['id'];
-    echo 2;
+ 
 
     // Consulta para comprobar si el usuario y la contraseña existen en la base de datos
     $query = "SELECT * FROM usuarios WHERE id='$id'";
     //echo $query."<br>";
-    echo 3;
+
     $results = mysqli_query($conn, $query);
-    echo 4;
+
 
     if (mysqli_num_rows($results) > 0) {
         echo 5;
@@ -48,7 +49,7 @@ if (isset($_POST['submit'])) {
                 if (mysqli_stmt_execute($stmt)) {
                     echo "Contraseña cambiada con éxito";
                     sleep(3);
-                    header("Location: /");
+                    header("Location: logout.php");
                 } else {
                     $error = "Error: El cambio de contraseña a fallado";
                 }

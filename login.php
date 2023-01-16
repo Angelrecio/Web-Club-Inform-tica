@@ -1,4 +1,9 @@
 <?php
+if (isset($_COOKIE["Block"])){
+	header("Location: /");
+}
+
+$_SESSION['count'] = 0;
 
 require "assets/request/conexion.php";
 session_start();
@@ -38,7 +43,12 @@ if (isset($_POST['submit'])) {
             header("Location: /");
         } else {
         $error = "Nombre de usuario o contraseña incorrectos";
+        $_SESSION['count']++;
         echo $error;
+        if($_SESSION['count'] == 5){
+            setcookie("Block", true, time() + (60*10), "/");  // 10 mins
+            header("Location: /");
+        }
     }
 
     mysqli_close($conn);

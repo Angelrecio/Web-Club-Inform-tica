@@ -88,6 +88,11 @@
 <div class = proponer_proyecto id="propuesta">
     <h1>Propuesta de proyecto</h1>
 
+    <?php
+        if (isset($_SESSION['id'])){
+
+    ?>
+
     <form method="post" action="assets/forms/propuestas_genius.php">
         <div class="row">
             <div class="col-12 col-12-mobilep">
@@ -106,6 +111,15 @@
             </div>
         </div>
     </form>
+
+    <?php
+
+        }else{
+            echo "<p>Inicia sesion para proponer proyecto</p>";
+        }
+
+    ?>
+    
 </div>
 </body>
 
