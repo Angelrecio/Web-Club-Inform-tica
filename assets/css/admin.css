@@ -61,7 +61,7 @@ h2 {
 p{
     color: white;
 }
-.presentacion{
+.talleres{
     margin: 1%;
 	width : auto;
 	height : 100%;
@@ -82,27 +82,12 @@ a:focus{
     color: white;
 }
 
-.proyectos_anteriores{
+.Hacknet{
     margin: 1%;
 	width : auto;
 	height : 100%;
     background-color: rgb(15, 15, 15);
 }
-
-.proyectos_en_curso{
-    margin: 1%;
-	width : auto;
-	height : 100%;
-    background-color: rgb(15, 15, 15);
-}
-
-.proponer_proyecto{
-    margin: 1%;
-	width : auto;
-	height : 100%;
-    background-color: rgb(15, 15, 15);
-}
-
 
 .logo_proyecto{
     height: 70px;
@@ -117,86 +102,10 @@ a:focus{
     padding: 1%;
 }
 
-#proant, #proyect, #propuesta {
+#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSu, #UsuariosSubb {
     display: none;
 }
 
 .presentacion:focus{
     display:contents;
-}
-
-form {
-    margin: 0 auto;
-    width: 350px;
-    padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
-  }
-   
-  div.row {
-    margin: 1em 0;
-  }
-   
-  div.row > div {
-    margin: 0.5em 0;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #999;
-  }
-   
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  textarea:focus {
-    border-color: #000;
-  }
-   
-  textarea {
-    height: 5em;
-    resize: vertical;
-  }
-   
-  ul.actions {
-    margin: 2em 0;
-  }
-
-input[type="text"]{
-    width: 98%;
-}
-
-
-input[type="submit"]{
-    align-items: center;
-    background-color: #fe2f2f;
-    border-color: rgb(183, 0, 255);
-    border: 100ch;
-    padding: 1.2%;
-    margin: 1%;
-
-}
-
-
-label{
-    color: aliceblue;
-}
-.boton_join{
-    background-color: rgb(222, 56, 49);
-    padding: 0.8%;
-    margin: 0 2%;
-    border-radius: 5px;
-    color:rgb(255, 255, 255);
-    transition: all 0.5s;
-    display: flex;
-    align-self: flex-end;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  border-color: #999;
-  background-color: #eee;
 }
