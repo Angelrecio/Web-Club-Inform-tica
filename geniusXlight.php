@@ -1,3 +1,8 @@
+<?php
+    // importar el archivo de conexion con la base de datos
+    require "assets/request/conexion.php";
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +20,8 @@
 
     <header>
         <div class="Content_logo">
-            <img class =  "logo" src = "/assets/img/leters_transparent.png">
-        <!---<img class= "logo"src="">--->
+        <img class= "logo"src="assets/img/leters_transparent.png">
+        <img class=logo id=logo_uem src="/assets/img/UE_Madrid_Logo_Positive_RGB.png">
     </div>
     </header>
     <nav id = Menu_cabecera>
@@ -34,46 +39,77 @@
 </div>
 <br>
 <div class = proyectos_anteriores id="proant">
-    <h1>Proyectos</h1>
-    <div class = elemento>
-        <h2 class=titulo>La gasolina de agua</h2>
-        <div class = descripcion>
-            <img class = "" href = "assets/img/leters.png">
-            <p>Las demandas entorno a la reducción de las emisiones están reformulando el concepto de la movilidad. La búsqueda de la máxima eficiencia y de alternativas que reduzcan tanto los consumos como los niveles de emisiones están llevando a los fabricantes a desarrollar sistemas innovadores para los ya complejos motores de combustión.
-            </p>
-        </div>
-    </div>
+<?php
+        // Realiza la consulta a la base de datos
+    $query = "SELECT * FROM proyecto WHERE fecha_fin= NULL";
+        $result = mysqli_query($conn, $query);
+
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+              // Muestra los datos de cada fila
+            echo "<h2 class=titulo >". $row["titulo"] . "</h1>";
+            echo "<p class=descripcion>".$row["descripcion"]."</p>";
+            echo "<p>Lenguajes requeridos:".$row["lenguajes"]."</p>";
+            echo "<a class = boton_join>Únete</a> ";               
+            }
+        } else {
+            echo  "<p>No se encontraron resultados</p>";
+        }
+    ?> 
 </div>
 <div class = proyectos_en_curso id="proyect">
-    <h1>Proyectos</h1>
-    <div class = elemento>
-        <h2 class=titulo>La luz del camino</h2>
-        <div class = descripcion>
-            <img class = "" href = "assets/img/leters.png">
-            <p>Una  mochila llena de luz y esperanza recorre el Camino Francés desde Roncesvalles con un doble objetivo: darle vida al Camino de Santiago y homenajear a las víctimas de la Covid-19. Sus porteadores: decenas de peregrinos y hospitaleros que se han sumado a esta iniciativa que concluirá el próximo 24 de julio en Santiago de Compostela.
+<?php 
+        // Realiza la consulta a la base de datos
+        $query = "SELECT * FROM proyecto WHERE fecha_fin != NULL";
+        $result = mysqli_query($conn, $query);
 
-                Jesús Ciordia y Mariló Pérez, dos peregrinos veteranos con muchos kilómetros en sus piernas y decenas de mochilas a su espalda, son los promotores de este proyecto al que han bautizado como La Luz del Camino. </p>
-        </div>
-    </div>
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+              // Muestra los datos de cada fila
+            echo "<h2 class=titulo >". $row["titulo"] . "</h1>";
+            echo "<p class= descripcion>".$row["descripcion"]."</p>";
+            echo "<p>Lenguajes requeridos:".$row["lenguajes"]."</p>";
+            echo "<a class = boton_join>Únete</a> ";               
+            }
+        } else {
+            echo "<p>No se encontraron resultados</p>";
+        }
+
+        // Cierra la conexion con la base de datos
+        mysqli_close($conn);
+    ?>
+</div>
 </div>
 <br>
 <div class = proponer_proyecto id="propuesta">
     <h1>Propuesta de proyecto</h1>
 
-    <form method="post" action="procesa1.php">
-        <label>Nombre:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre del proyecto">
-        <br>
-        <label>descripcion:</label>
-        <input type="message" name="descripcion" id="descripcion_form" placeholder="Descripcion del proyecto">
-        <br>
-        <label>Material necesario:</label>
-        <input type="text" name="material" id="material" placeholder="Material ej:Arduino, sensores, servidores, etc">
-        <input type="submit" name="enviar" id="enviar">
+    <form method="post" action="assets/forms/propuestas_genius.php">
+        <div class="row">
+            <div class="col-12 col-12-mobilep">
+                <input type="text" name="name" placeholder="Nombre del proyecto" />
+            </div>
+            <div class="col-12">
+                <textarea name="message" placeholder="Cuéntanos tu gran idea de proyecto" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+                <textarea name="message2" placeholder="Material necesario" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+                <ul class="actions special">
+                    <li><input type="submit" value="Enviar" name="submit"/></li>
+                </ul>
+            </div>
+        </div>
     </form>
 </div>
 </body>
 
 
-<script src="assets/js/genio.js"></script>
+
+<script src="assets/js/genioLight.js"></script>
 </html>

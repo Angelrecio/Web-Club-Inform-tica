@@ -15,21 +15,21 @@ session_start();
 
 		<!-- Header -->
 			<div id="header">
+				<div id = in_cabeza>
+				<a class = "Boton_in icon solid fa-user" id="Boton_in" href = ""></a>
 
 			<?php
 				if (!isset($_SESSION['id'])){
-					echo "<div id = in_cabeza>";
 					echo '<a class = "Boton_in" id="Boton_in" href = "login.php">Log in</a>';
-					echo '</div>';
+
 				}else{
-					echo "<div id = in_cabeza>";
 					if($_SESSION['rol'] == 1){
-						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php">Administrar</a>';
+						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php.php">Administrar</a>';
 					}
 					echo '<a class = "Boton_in" id="Boton_in" href = "logout.php">Log out</a>';
-					echo '</div>';
 				}
-				?>
+			?>
+				</div>
 				
 				<span id="contenedor_logo_cint"><img id=logo_cint src="assets/img/ue_logoclub_cmyk_11_c_int.png"></span>
 				<h1>C-INT</h1>
