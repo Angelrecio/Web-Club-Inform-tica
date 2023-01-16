@@ -24,7 +24,7 @@ session_start();
 
 				}else{
 					if($_SESSION['rol'] == 1){
-						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php.php">Administrar</a>';
+						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php">Administrar</a>';
 					}
 					echo '<a class = "Boton_in" id="Boton_in" href = "cambioPass.php">Cambiar contraseña</a>';
 					echo '<a class = "Boton_in" id="Boton_in" href = "logout.php">Log out</a>';
@@ -78,7 +78,7 @@ session_start();
 						<a href="geniusX.php" class="image icon solid fa-tachometer-alt"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>GeniusX</h3>
-							<p>Una lazadera de Starups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>
+							<p>Una lazadera de Startups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>
 						</div>
 					</section>
 				</div>

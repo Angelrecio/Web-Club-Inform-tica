@@ -1,4 +1,11 @@
 <?php
+    $cookie_name = "genius";
+    if($_COOKIE[$cookie_name]) {
+        header("Location: geniusXlight.php");
+      } else {
+        setcookie($cookie_name, true, time() + (3600*24), "/"); // 86400 = 1 day
+      }
+
     // importar el archivo de conexion con la base de datos
     require "assets/request/conexion.php";
     session_start();
