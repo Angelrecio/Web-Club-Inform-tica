@@ -98,20 +98,20 @@ session_start();
 					<form method="post" action="assets/forms/inscripciones.php">
 						<div class="row">
 							<div class="col-12 col-12-mobilep">
-								<input type="text" name="name" placeholder="Nombre completo" />
+								<input type="text" name="name" placeholder="Nombre completo" require />
 							</div>
 							<div class="col-6 col-12-mobilep">
-								<input type="text" name="n_expediente" placeholder="n_expediente" />
+								<input type="number" name="n_expediente" placeholder="n_expediente" require/>
 							</div>
 							<div class="col-6 col-12-mobilep">
-								<input type="email" name="email" placeholder="Email" />
+								<input type="email" name="email" placeholder="Email" require/>
 							</div>
 							<div class="col-12">
-								<textarea name="message" placeholder="¿Por que te gustaria unirte al club?" rows="6"></textarea>
+								<textarea name="message" require placeholder="¿Por que te gustaria unirte al club?" rows="6"></textarea>
 							</div>
 							<div class="col-12">
 								<ul class="actions special">
-									<li><input type="submit" value="Enviar" /></li>
+									<li><input type="submit" value="Enviar" name="submit"/></li>
 								</ul>
 							</div>
 						</div>
