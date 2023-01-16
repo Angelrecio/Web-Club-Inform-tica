@@ -27,7 +27,9 @@
         <br>
 
         <label for="role">Rol:</label>
-        <input type="number" id="role" name="role" required>
+        <select name="rol" id="rol">
+          <option value="0">Estudiante</option>
+          <option value="1">Adminitrador</option>
         <br>
         
         <input type="submit" value="registrar" name="submit">

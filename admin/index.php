@@ -34,7 +34,6 @@
 </head>
 <body>
     <h1>Bienvenido <?php echo $_SESSION['nombreUsuario']; ?>!</h1>
- 
     <h2>Ver talleres</h2>
     <table>
         <tr>
@@ -140,6 +139,6 @@
         <input type="submit" name="competicion_submit" value="Añadir competición">
     </form>
     <br>
-    <a href="logout.php">Cerrar sesión</a>
+    <a href="/">Volver</a>
 </body>
 </html>
