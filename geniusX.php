@@ -1,4 +1,10 @@
 <?php
+if (isset($_COOKIE["Block"])){
+	header("Location: /");
+}
+?>
+
+<?php
     $cookie_name = "genius";
     if($_COOKIE[$cookie_name]) {
         header("Location: geniusXlight.php");

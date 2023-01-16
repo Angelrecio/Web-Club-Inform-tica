@@ -1,3 +1,10 @@
+<?php
+if (isset($_COOKIE["Block"])){
+	header("Location: /");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
