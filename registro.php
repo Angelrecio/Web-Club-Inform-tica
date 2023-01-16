@@ -1,3 +1,9 @@
+<?php
+if (isset($_COOKIE["Block"])){
+	header("Location: /");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
