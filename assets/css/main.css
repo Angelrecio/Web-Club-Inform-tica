@@ -2953,7 +2953,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 8em 0 16em 0;
+				padding: 3em 0 16em 0;
 			}
 
 				#header h1 {
@@ -3352,13 +3352,16 @@ input, select, textarea {
 		background-color: #fff;
 		padding: 15 0;
 	}
+
 	#in_cabeza{
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
 		align-self:start;
 		justify-content: end;
+		margin-bottom: 3em;
 	}
+
 	.Boton_in{
 		display: flex;
 		align-items: center;
@@ -3375,6 +3378,7 @@ input, select, textarea {
 		background-color: rgb(255, 255, 255);
 		
 	}
+
 	#footer_log {
 		align-self: center;
 		display: flex;
@@ -3398,7 +3402,6 @@ input, select, textarea {
 		text-align: center;
 	}
 
-
 	.login{
 		color: white;
 		width: fit-content;
@@ -3421,4 +3424,20 @@ input, select, textarea {
 	}
 	.descripcion{
 		margin: 1.2%;
+	}
+
+	.menu {
+		display: none;
+		
+	}
+
+	.hover:hover + .menu {
+		display: block;
+		align-items: center;
+		background-color: rgb(222, 56, 49);
+		padding: 0.8%;
+		margin: 0 2%;
+		border-radius: 5px;
+		color:rgb(255, 255, 255);
+		transition: all 0.5s;
 	}

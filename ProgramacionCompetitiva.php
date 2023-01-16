@@ -12,9 +12,9 @@
 <body>
     <nav id = Menu_cabecera>
         <a href="index.php" class="Boton_cabecera" style="width: 5%; padding: 0%; align-self: start; background-color: rgb(255, 255, 255);"> <img id=logo_club src="\assets\img\ue_logoclub_cmyk_11_c_int.png" style="width: 100%; padding: 0%; align-self: start;"></a>
-        <a class = Boton_cabecera href="Hacknet.html">Hacknet</a>
-        <a class = Boton_cabecera href="ProgramacionCompetitiva.html">Programacion competitiva</a>
-        <a class = Boton_cabecera href="geniusX.html">GeniusX</a>        
+        <a class = Boton_cabecera href="Hacknet.php">Hacknet</a>
+        <a class = Boton_cabecera href="ProgramacionCompetitiva.php">Programacion<br>competitiva</a>
+        <a class = Boton_cabecera href="geniusX.php">GeniusX</a>        
     </nav> <br>
 <div class = presentacion>
     <h1 style="margin: 1.2%;">Presentación:</h1>
@@ -37,7 +37,7 @@
             echo "<div class = elemento>";
             echo "<h2 class=titulo>". $row["titulo"] . "</h2>";
             echo "<p class = texto_descripcion>".$row["descripcion"]."</p>";
-            echo "<a href="$row["enlace"]." class = boton_join>Únete</a> ";             
+            echo "<a href=".$row["enlace"]." class = boton_join>Únete</a> ";             
             }
         } else {
             echo "<p>No se encontraron resultados</p>";

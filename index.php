@@ -1,5 +1,6 @@
 <?php
-require "assets/request/conexion.php"
+require "assets/request/conexion.php";
+session_start();
 ?>
 
 <!DOCTYPE HTML>
@@ -15,12 +16,31 @@ require "assets/request/conexion.php"
 		<!-- Header -->
 			<div id="header">
 				<div id = in_cabeza>
-					<a class = "Boton_in" id="Boton_in" href = "login.php">Log in</a>
+					
+
+			<?php
+				if (!isset($_SESSION['id'])){
+					echo '<a class = "Boton_in" id="Boton_in" href = "login.php">Log in</a>';
+
+				}else{
+					if($_SESSION['rol'] == 1){
+						echo '<a class = "Boton_in" id="Boton_in" href = "admin/index.php">Administrar</a>';
+					}
+					echo '<a class = "Boton_in" id="Boton_in" href = "cambioPass.php">Cambiar contraseña</a>';
+					echo '<a class = "Boton_in" id="Boton_in" href = "logout.php">Log out</a>';
+				}
+			?>
 				</div>
-				<br>
+				
 				<span id="contenedor_logo_cint"><img id=logo_cint src="assets/img/ue_logoclub_cmyk_11_c_int.png"></span>
 				<h1>C-INT</h1>
 				<p><h2>El club de informatica y nuevas tecnologias.</h2></p>
+				<?php
+				if (isset($_SESSION['id'])){
+					echo "Hola ";
+					echo $_SESSION['nombre'];
+				}
+				?>
 			</div>
 
 		<!-- Main -->
@@ -58,7 +78,7 @@ require "assets/request/conexion.php"
 						<a href="geniusX.php" class="image icon solid fa-tachometer-alt"><img src="images/header2.png" alt="" /></a>
 						<div class="content">
 							<h3>GeniusX</h3>
-							<p>Una lazadera de Starups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>
+							<p>Una lazadera de Startups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>
 						</div>
 					</section>
 				</div>
@@ -75,7 +95,7 @@ require "assets/request/conexion.php"
 
 					<p>Rellena el formulario para unirte al Club</p>
 
-					<form method="post" action="assepeticion.php">
+					<form method="post" action="assets/forms/inscripciones.php">
 						<div class="row">
 							<div class="col-12 col-12-mobilep">
 								<input type="text" name="name" placeholder="Nombre completo" />
@@ -98,7 +118,7 @@ require "assets/request/conexion.php"
 					</form>
 
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<!--<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
 						<li><a href="https://github.com/C-intUEM" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 

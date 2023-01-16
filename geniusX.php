@@ -1,6 +1,14 @@
 <?php
+    $cookie_name = "genius";
+    if($_COOKIE[$cookie_name]) {
+        header("Location: geniusXlight.php");
+      } else {
+        setcookie($cookie_name, true, time() + (3600*24), "/"); // 86400 = 1 day
+      }
+
     // importar el archivo de conexion con la base de datos
     require "assets/request/conexion.php";
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +47,7 @@
 </div>
 <br>
 <div class = proyectos_anteriores id="proant">
-<?php /* 
+<?php
         // Realiza la consulta a la base de datos
     $query = "SELECT * FROM proyecto WHERE fecha_fin= NULL";
         $result = mysqli_query($conn, $query);
@@ -57,10 +65,10 @@
         } else {
             echo  "<p>No se encontraron resultados</p>";
         }
-   */ ?> 
+    ?> 
 </div>
 <div class = proyectos_en_curso id="proyect">
-<?php /*
+<?php 
         // Realiza la consulta a la base de datos
         $query = "SELECT * FROM proyecto WHERE fecha_fin != NULL";
         $result = mysqli_query($conn, $query);
@@ -81,7 +89,7 @@
 
         // Cierra la conexion con la base de datos
         mysqli_close($conn);
-*/    ?>
+    ?>
 </div>
 </div>
 <br>
@@ -91,7 +99,7 @@
     <form method="post" action="assets/forms/propuestas_genius.php">
         <div class="row">
             <div class="col-12 col-12-mobilep">
-                <input type="text" name="name" placeholder="Nombre" />
+                <input type="text" name="name" placeholder="Nombre del proyecto" />
             </div>
             <div class="col-12">
                 <textarea name="message" placeholder="Cuéntanos tu gran idea de proyecto" rows="6"></textarea>
@@ -101,7 +109,7 @@
             </div>
             <div class="col-12">
                 <ul class="actions special">
-                    <li><input type="submit" value="Enviar" /></li>
+                    <li><input type="submit" value="Enviar" name="submit"/></li>
                 </ul>
             </div>
         </div>

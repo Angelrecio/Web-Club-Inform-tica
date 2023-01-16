@@ -1,7 +1,19 @@
+<?php
+    session_start();
+ 
+    // Compruebe si el usuario ha iniciado sesión
+    if (!isset($_SESSION['id'])) {
+        header("location: ../login.php");
+        exit;
+    }
+ 
+    // Conexión a la base de datos
+    $db = mysqli_connect("localhost", "admin", "password", "baseDatos");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <a class = Boton_cabecera href="/">Volver a C-Int</a>    
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
     <title>Administración</title>
     <style type="text/css">
@@ -22,7 +34,6 @@
 </head>
 <body>
     <h1>Bienvenido <?php echo $_SESSION['nombreUsuario']; ?>!</h1>
- 
     <h2>Ver talleres</h2>
     <table>
         <tr>
@@ -128,6 +139,6 @@
         <input type="submit" name="competicion_submit" value="Añadir competición">
     </form>
     <br>
-    <a href="logout.php">Cerrar sesión</a>
+    <a href="/">Volver</a>
 </body>
 </html>

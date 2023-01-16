@@ -1,16 +1,17 @@
 <?php
 require "../request/conexion.php";
+include "../functions/functs.php";
 
 
 if (isset($_POST['submit'])) {
     echo "<br>";
 
-    $nombre = $_POST['nombre'];
-    $apellido1 = $_POST['apellido1'];
-    $apellido2 = $_POST['apellido2'];
+    $nombre = capitalizeFirstLetter($_POST['nombre']);
+    $apellido1 = capitalizeFirstLetter($_POST['apellido1']);
+    $apellido2 = capitalizeFirstLetter($_POST['apellido2']);
     $n_exp = $_POST['nexp'];
-    $email = $_POST['email'];
-    $role = $_POST['role'];
+    $email = capitalizeFirstLetter($_POST['email']);
+    $role = $_POST['rol'];
     
     // Crear un hash de contraseña
     $password_hash = md5($n_exp);
@@ -27,10 +28,12 @@ if (isset($_POST['submit'])) {
         // Execute the SQL statement
         if (mysqli_stmt_execute($stmt)) {
             echo "Usuario creado con éxito";
+            header("Location: /");
         } else {
             echo "Error: failed to execute the SQL statement";
+            header("Location: /registro.php");
         }
-        header("Location: /");
+        
     }
 }
 ?>
