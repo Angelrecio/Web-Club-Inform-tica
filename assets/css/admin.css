@@ -57,7 +57,7 @@ h2 {
     margin: 1%;
 }
 
-#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSub, #UsuariosSub  {
+#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSub, #UsuariosSub {
     margin: 1%;
 	width : auto;
 	height : 100%;
@@ -83,13 +83,12 @@ h2 {
     margin-top: 10px;
 }
 p{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 a{
     text-decoration: none;
     color: black;
-
 }
 a:hover{
     text-decoration:dotted;
@@ -112,11 +111,9 @@ a:focus{
 .titulo{
     padding: 1%;
 }
-#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSub, #UsuariosSub {
+
+#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSub, #UsuariosSub, #VerTalleresSub, #AnadirTalleresSub,
+#VerCompeticionesHacknetSub, #AnadirCompeticionesHacknetSub, #VerCompeticionesCompetitivaSub, #AnadirCompeticionesCompetitivaSub,
+#VerProyectosSub, #VerSugerenciasSub, #AnadirProyectoSub, #VerPeticionesSub, #AnadirUsuarioSub {
     display: none;
-}
-
-
-.presentacion:focus{
-    display:contents;
 }

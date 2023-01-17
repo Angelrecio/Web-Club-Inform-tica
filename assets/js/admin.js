@@ -35,4 +35,56 @@ $(document).ready(function(){
     $("#Programacion_CompetitivaSub").slideUp("slow")
     $("#GeniusXSub").slideUp("slow")
   });
+
+  $("#VerTalleres").click(function(){
+    $("#VerTalleresSub").slideToggle();
+    $("#AnadirTalleresSub").slideUp("slow")
+  });
+  $("#AnadirTalleres").click(function(){
+    $("#AnadirTalleresSub").slideToggle();
+    $("#VerTalleresSub").slideUp("slow")
+  });
+
+  $("#VerCompeticionesHacknet").click(function(){
+    $("#VerCompeticionesHacknetSub").slideToggle();
+    $("#AnadirCompeticionesHacknetSub").slideUp("slow")
+  });
+  $("#AnadirCompeticionesHacknet").click(function(){
+    $("#AnadirCompeticionesHacknetSub").slideToggle();
+    $("#VerCompeticionesHacknetSub").slideUp("slow")
+  });
+
+  $("#VerCompeticionesCompetitiva").click(function(){
+    $("#VerCompeticionesCompetitivaSub").slideToggle();
+    $("#AnadirCompeticionesCompetitivaSub").slideUp("slow")
+  });
+  $("#AnadirCompeticionesCompetitiva").click(function(){
+    $("#AnadirCompeticionesCompetitivaSub").slideToggle();
+    $("#VerCompeticionesCompetitivaSub").slideUp("slow")
+  });
+
+  $("#VerProyectos").click(function(){
+    $("#VerProyectosSub").slideToggle();
+    $("#VerSugerenciasSub").slideUp("slow")
+    $("#AnadirProyectoSub").slideUp("slow")
+  });
+  $("#VerSugerencias").click(function(){
+    $("#VerSugerenciasSub").slideToggle();
+    $("#VerProyectosSub").slideUp("slow")
+    $("#AnadirProyectoSub").slideUp("slow")
+  });
+  $("#AnadirProyecto").click(function(){
+    $("#AnadirProyectoSub").slideToggle();
+    $("#VerProyectosSub").slideUp("slow")
+    $("#VerSugerenciasSub").slideUp("slow")
+  });
+
+  $("#VerPeticiones").click(function(){
+    $("#VerPeticionesSub").slideToggle();
+    $("#AnadirUsuarioSub").slideUp("slow")
+  });
+  $("#AnadirUsuario").click(function(){
+    $("#AnadirUsuarioSub").slideToggle();
+    $("#VerPeticionesSub").slideUp("slow")
+  });
 });
