@@ -77,25 +77,19 @@
     </div>
     <div class = anadir_talleres id = "AnadirTalleresSub">
         <form method="post" action="../assets/forms/anadirtaller.php">
-            <div class="row">
-                <div class="col-12 col-12-mobilep">
-                    <input type="text" name="name" placeholder="Nombre completo" require />
-                </div>
-                <div class="col-6 col-12-mobilep">
-                    <input type="number" name="n_expediente" placeholder="n_expediente" require/>
-                </div>
-                <div class="col-6 col-12-mobilep">
-                    <input type="email" name="email" placeholder="Email" require/>
-                </div>
-                <div class="col-12">
-                    <textarea name="message" require placeholder="¿Por que te gustaria unirte al club?" rows="6"></textarea>
-                </div>
-                <div class="col-12">
-                    <ul class="actions special">
-                        <li><input type="submit" value="Enviar" name="submit"/></li>
-                    </ul>
-                </div>
-            </div>
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion"></textarea><br>
+            <label for="fecha-realizacion">Fecha de realización:</label>
+            <input type="datetime-local" id="fecha-realizacion" name="fecha-realizacion"><br>
+            <label for="seccion">Sección:</label>
+            <input type="number" id="seccion" name="seccion"><br>
+            <label for="capacidad">Capacidad:</label>
+            <input type="number" id="capacidad" name="capacidad"><br>
+            <label for="Aula">Aula:</label>
+            <input type="text" id="Aula" name="Aula"><br>
+            <input type="submit" value="Insertar taller" name="submit">
         </form>
     </div>
 </div>

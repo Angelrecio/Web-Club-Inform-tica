@@ -4,36 +4,23 @@ include "../functions/functs.php";
 
 
 if (isset($_POST['submit'])) {
-    echo "<br>";
+    $titulo = capitalizeFirstLetter($_POST["titulo"]);
+    $descripcion = capitalizeFirstLetter($_POST["descripcion"]);
+    $fecha_realizacion = $_POST["fecha-realizacion"];
+    $seccion = $_POST["seccion"];
+    $capacidad = $_POST["capacidad"];
+    $aula = capitalizeFirstLetter($_POST["Aula"]);
 
-    $nombre = capitalizeFirstLetter($_POST['nombre']);
-    $apellido1 = capitalizeFirstLetter($_POST['apellido1']);
-    $apellido2 = capitalizeFirstLetter($_POST['apellido2']);
-    $n_exp = $_POST['nexp'];
-    $email = capitalizeFirstLetter($_POST['email']);
-    $role = $_POST['rol'];
-    
-    // Crear un hash de contraseña
-    $password_hash = md5($n_exp);
+    $sql = "INSERT INTO talleres (titulo, descripcion, fecharealizacion, seccion, capacidad, Aula)
+    VALUES ('$titulo', '$descripcion', '$fecha_realizacion', '$seccion', '$capacidad', '$aula')";
 
-    // Prepare the SQL statement
-    $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, nexp, email, pass, rol) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "Error: failed to prepare the SQL statement";
+    if (mysqli_query($conn, $sql)) {
+        echo "Taller creado correctamente";
+        header("Location: ../../admin/");
     } else {
-        // Bind the parameters to the placeholders in the SQL statement
-        mysqli_stmt_bind_param($stmt, "sssissi", $nombre, $apellido1, $apellido2, $n_exp, $email, $password_hash, $role);
-
-        // Execute the SQL statement
-        if (mysqli_stmt_execute($stmt)) {
-            echo "Usuario creado con éxito";
-            header("Location: /");
-        } else {
-            echo "Error: failed to execute the SQL statement";
-            header("Location: /registro.php");
-        }
-        
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        sleep(5);
+        header("Location: ../../admin/");
     }
 }
 ?>
