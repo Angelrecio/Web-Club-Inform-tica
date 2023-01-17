@@ -74,13 +74,13 @@ if(!isset($_SESSION['rol']) or $_SESSION['id'] != 1){
         // Verifica si la consulta obtuvo resultados
         if (mysqli_num_rows($result) > 0) {
             // Recorre cada fila de los resultados
-            while ($row = mysqli_fetch_assoc($result)) {
+            while ($row = mysqli_fetch_assoc($result)){
                 $cantidad = get_id_count($row['id'], $conn);
-                ?>
-                <div style="display: flex; justify-content: space-evenly;">
-                    <div class="info" style="display: block;">
+                
+               echo '<div style="display: flex; justify-content: space-evenly;">';
+                echo '<div class="info" style="display: block;">';
 
-    <?php
+   
                     // Muestra los datos de cada fila
                     echo "Título: " . $row["titulo"] . "<br>";
                     echo "Descripción: " . $row["descripcion"] . "<br>";
@@ -90,29 +90,27 @@ if(!isset($_SESSION['rol']) or $_SESSION['id'] != 1){
                     echo "Capacidad: ". $cantidad. "/" . $row["capacidad"] . "<br>";
                     echo "Aula: " . $row["Aula"] . "<br>";
                     
-
-                    ?>
-                    </div>
-                    <div class="lista" style="display: block;">
-                    <?php
+                    echo '</div>';
+                    echo '<div class="lista" style="display: block;">';
+                    
                     echo "Lista:<br>";
                     foreach(getUsersInWorkshop($row['id'],$conn) as $id){
-                        $query = "SELECT nombre, apellido1 as app1, apellido2 as app2 FROM usuarios WHERE id = $id";
-                        $result = mysqli_query($conn, $query);
+                        $sql = "SELECT nombre, apellido1 as app1, apellido2 as app2 FROM usuarios WHERE id = $id";
+                        $results = mysqli_query($conn, $sql);
 
                         // Verifica si la consulta obtuvo resultados
-                        if (mysqli_num_rows($result) > 0) {
+                        if (mysqli_num_rows($results) > 0) {
                             // Recorre cada fila de los resultados
-                            while ($name = mysqli_fetch_assoc($result)){
+                            while ($name = mysqli_fetch_assoc($results)){
                                 echo $name['nombre']. " ". $name['app1']. " ". $name['app2'];
                                 echo "<br>";
                             }
                     }
                 }
-                    ?>
-                    </div>
-                </div>
-    <?php
+                    
+                    echo '</div>';
+                echo '</div>';
+   
                 echo "<hr>";
             }
         } else {
