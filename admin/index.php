@@ -217,9 +217,28 @@
             }
     ?>
     </div>
-    <div class = ver_sugerencias id = "VerSugerenciasSub">
-        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-    </div> <div class = anadir_proyecto id="AnadirProyectoSub">
+    <div class = ver_sugerencias id = "VerSugerenciasSub" href = >
+        <?php
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM proponerproyecto";
+            $result = mysqli_query($conn, $query);
+
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Muestra los datos de cada fila
+                    echo "Nomnbre proyecto: " . $row["nombre"] . "<br>";
+                    echo "La gran idea de proyecto: " . $row["ideaproyecto"] . "<br>";
+                    echo "Materiales: " . $row["materiales"] . "<br>";
+                    echo "<hr>";
+                }
+            } else {
+                echo "No se encontraron resultados";
+            }
+        ?>
+    </div> 
+    <div class = anadir_proyecto id="AnadirProyectoSub">
     <form action="../assets/forms/anadirproyecto.php" method="post">
         <label for="titulo">Titulo:</label>
         <input type="text" id="titulo" name="titulo" required>
@@ -248,7 +267,26 @@
         <a class = Subboton id="AnadirUsuario" href="#anadir_usuario">Añadir usuario</a>
     </nav>
     <div class = ver_peticiones id="VerPeticionesSub">
-        
+    <?php
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM inscripcion";
+            $result = mysqli_query($conn, $query);
+
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Muestra los datos de cada fila
+                    echo "Nomnbre: " . $row["nombre"] . "<br>";
+                    echo "Número de expediente: " . $row["nexp"] . "<br>";
+                    echo "Email: " . $row["email"] . "<br>";
+                    echo "Motivo de petición de unión: " . $row["razon"] . "<br>";
+                    echo "<hr>";
+                }
+            } else {
+                echo "No se encontraron resultados";
+            }
+        ?>
     </div>
     <div class = anadir_usuario id = "AnadirUsuarioSub">
         <form action="../assets/forms/registro_a.php" method="post">
