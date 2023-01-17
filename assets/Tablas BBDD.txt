@@ -76,3 +76,15 @@ CREATE TABLE `inscripcion` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique` (`nexp`,`email`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `talleresusuarios` (
+  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(9) DEFAULT NULL,
+  `id_taller` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_taller` (`id_taller`),
+  CONSTRAINT `talleresusuarios_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`),
+  CONSTRAINT `talleresusuarios_ibfk_2` FOREIGN KEY (`id_taller`) REFERENCES `talleres` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
