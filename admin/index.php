@@ -142,9 +142,25 @@
     <div class = ver_sugerencias id = "VerSugerenciasSub">
         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
     </div> <div class = anadir_proyecto id="AnadirProyectoSub">
-    <p>
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-    </p>
+    <form action="../assets/forms/anadirproyecto.php" method="post">
+        <label for="titulo">Titulo:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" required>
+        <br>
+
+        <label for="lenguajes">Lenguajes:</label>
+        <input type="text" id="lenguajes" name="lenguajes" required>
+        <br>
+
+        <label for="capacidad">Capacidad:</label>
+        <input type="number" id="capacidad" name="capacidad" required>
+        <br>
+        
+        <input type="submit" value="registrar" name="submit">
+        </form>
     </div>
 </div>
 <div class = Usuarios id="UsuariosSub">
@@ -154,7 +170,7 @@
         <a class = Subboton id="AnadirUsuario" href="#anadir_usuario">Añadir usuario</a>
     </nav>
     <div class = ver_peticiones id="VerPeticionesSub">
-    
+        
     </div>
     <div class = anadir_usuario id = "AnadirUsuarioSub">
         <form action="../assets/forms/registro_a.php" method="post">
