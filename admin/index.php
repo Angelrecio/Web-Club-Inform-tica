@@ -72,7 +72,6 @@
         }
 
         // Cierra la conexion con la base de datos
-        mysqli_close($conn);
     ?>
     </div>
     <div class = anadir_talleres id = "AnadirTalleresSub">
@@ -108,7 +107,25 @@
     </nav>
 
     <div class = ver_competicionesHacknet id="VerCompeticionesHacknetSub">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut id labore sapiente modi! Iste mollitia, quia rerum aliquam quis, deserunt vitae, asperiores veniam in voluptates neque impedit! Ipsa, minus.</p>
+    <?php
+        // Realiza la consulta a la base de datos
+        $query = "SELECT * FROM hacknet";
+        $result = mysqli_query($conn, $query);
+
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+                // Muestra los datos de cada fila
+                echo "Título: " . $row["titulo"] . "<br>";
+                echo "Descripción: " . $row["descripción"] . "<br>";
+                echo "Enlace: " . $row["link"] . "<br>";
+                echo "<hr>";
+            }
+        } else {
+            echo "No se encontraron resultados";
+        }
+    ?>
     </div>
     <div class = anadir_competicionesHacknet id = "AnadirCompeticionesHacknetSub">
         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -121,7 +138,25 @@
         <a class = Subboton id="AnadirCompeticionesCompetitiva" href="#anadir_competicionesCompetitiva">Añadir competiciones</a>
     </nav>
     <div class = ver_competicionesCompetitiva id="VerCompeticionesCompetitivaSub">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut id labore sapiente modi! Iste mollitia, quia rerum aliquam quis, deserunt vitae, asperiores veniam in voluptates neque impedit! Ipsa, minus.</p>
+        <?php
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM ranked";
+            $result = mysqli_query($conn, $query);
+
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Muestra los datos de cada fila
+                    echo "Título: " . $row["titulo"] . "<br>";
+                    echo "Descripción: " . $row["descripción"] . "<br>";
+                    echo "Enlace: " . $row["link"] . "<br>";
+                    echo "<hr>";
+                }
+            } else {
+                echo "No se encontraron resultados";
+            }
+        ?>
     </div>
     <div class = anadir_competicionesCompetitiva id = "AnadirCompeticionesCompetitivaSub">
         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -137,7 +172,34 @@
         <a class = Subboton id="AnadirProyecto" href="#anadir_proyecto">Añadir proyecto</a>
     </nav>
     <div class = ver_proyectos id="VerProyectosSub">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut id labore sapiente modi! Iste mollitia, quia rerum aliquam quis, deserunt vitae, asperiores veniam in voluptates neque impedit! Ipsa, minus.</p>
+    <?php
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM proyecto";
+            $result = mysqli_query($conn, $query);
+
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Muestra los datos de cada fila
+                    echo "Título: " . $row["titulo"] . "<br>";
+                    echo "Descripción: " . $row["descripción"] . "<br>";
+                    echo "lenguajes: " . $row["lenguajes"] . "<br>";
+                    echo "capacidad: " . $row["capacidad"] . "<br>";
+                    echo "capacidad: " . $row["capacidad"] . "<br>";
+                    echo "fecha inicio: " . $row["fecha_inicio"] . "<br>";
+                    if (isset($row["fecha_fin"])){
+                        echo "fecha fin: " . $row["fecha_fin"] . "<br>";
+                    }else{
+                        echo "fecha fin: ". '<form action="" method="post"><input type="submit" name="submit" value="'.$row['id'].'"></form>';
+                    }
+                    
+                    echo "<hr>";
+                }
+            } else {
+                echo "No se encontraron resultados";
+            }
+    ?>
     </div>
     <div class = ver_sugerencias id = "VerSugerenciasSub">
         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
