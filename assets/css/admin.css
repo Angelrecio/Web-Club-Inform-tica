@@ -1,7 +1,7 @@
 @import url("fontawesome-all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     font-family: 'Kdam Thmor Pro', sans-serif;
     
 }
@@ -30,12 +30,12 @@ body {
 
 h1 {
     font-family: 'Kdam Thmor Pro', sans-serif;
-    color: #fe2f2f;
+    color: #000000;
     text-align: center;
 }
 h2 {
     font-family: 'Kdam Thmor Pro', sans-serif;
-    color: #fe2f2f;
+    color: #000000;
 }
 .Boton_cabecera{
     display: flex;
@@ -50,11 +50,19 @@ h2 {
 .Subboton{
     display: flex;
     align-items: center;
-    background-color: #00ff00;
+    background-color: #f82929;
     border-color: rgb(183, 0, 255);
     border: 100ch;
     padding: 1.2%;
     margin: 1%;
+}
+
+#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSub, #UsuariosSub  {
+    margin: 1%;
+	width : auto;
+	height : 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 1%;
 }
 
 .Content_logo{
@@ -77,13 +85,7 @@ h2 {
 p{
     color: white;
 }
-.talleres{
-    margin: 1%;
-	width : auto;
-	height : 100%;
-    background-color: rgb(255, 255, 255);
-    padding: 1%;
-}
+
 a{
     text-decoration: none;
     color: black;
@@ -96,13 +98,6 @@ a:hover{
 
 a:focus{
     color: white;
-}
-
-.Hacknet{
-    margin: 1%;
-	width : auto;
-	height : 100%;
-    background-color: rgb(134, 95, 95);
 }
 
 .logo_proyecto{
