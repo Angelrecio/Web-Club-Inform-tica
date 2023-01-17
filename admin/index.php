@@ -148,10 +148,38 @@
         <a class = Subboton id="AnadirUsuario" href="#anadir_usuario">Añadir usuario</a>
     </nav>
     <div class = ver_peticiones id="VerPeticionesSub">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut id labore sapiente modi! Iste mollitia, quia rerum aliquam quis, deserunt vitae, asperiores veniam in voluptates neque impedit! Ipsa, minus.</p>
+    
     </div>
     <div class = anadir_usuario id = "AnadirUsuarioSub">
-        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <form action="../assets/forms/registro_a.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+
+        <label for="apellido1">Primer Apellido:</label>
+        <input type="text" id="apellido1" name="apellido1" required>
+        <br>
+
+        <label for="apellido2">Segundo Apellido:</label>
+        <input type="text" id="apellido2" name="apellido2" required>
+        <br>
+
+        <label for="n-exp">Número de expediente:</label>
+        <input type="number" id="nexp" name="nexp" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <label for="role">Rol:</label>
+        <select name="rol" id="rol">
+          <option value="0">Estudiante</option>
+          <option value="1">Adminitrador</option>
+        <br>
+        
+        <input type="submit" value="registrar" name="submit">
+        </form>
     </div>
 </div>
 <div>
