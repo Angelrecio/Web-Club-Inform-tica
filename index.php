@@ -85,6 +85,13 @@ if (isset($_COOKIE["Block"])){
 								<p>Una lazadera de Startups donde los estudiantes del club pueden proponer proyectos y venderlos a empresas.</p>
 							</div>
 						</section>
+						<section class="feature right">
+							<a href="talleres.php" class="image icon solid fa-hammer"><img src="images/header2.png" alt="" /></a>
+							<div class="content">
+								<h3>Talleres</h3>
+								<p>Aquí es donde se encuentran los talleres que se hacen en nuestro club, podrás ver una lista de ellos e incluso proponer alguno.</p>
+							</div>
+						</section>
 					</div>
 
 				</div>
