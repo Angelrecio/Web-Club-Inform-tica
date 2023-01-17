@@ -1,6 +1,19 @@
 <?php
     // importar el archivo de conexion con la base de datos
     require "assets/request/conexion.php";
+
+    function get_id_count($id, $conn) {
+        $stmt = mysqli_prepare($conn, 'SELECT COUNT(*) FROM talleresusuarios WHERE id_taller = ?;');
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $count);
+        mysqli_stmt_fetch($stmt);
+        if (!isset($count)){
+            $count = 0;
+        }
+        return $count;
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +36,15 @@
         if (mysqli_num_rows($result) > 0) {
             // Recorre cada fila de los resultados
             while ($row = mysqli_fetch_assoc($result)) {
+                $cantidad = get_id_count($row['id'], $conn);
+                
                 // Muestra los datos de cada fila
                 echo "Título: " . $row["titulo"] . "<br>";
                 echo "Descripción: " . $row["descripción"] . "<br>";
                 echo "Fecha de publicación: " . $row["Fecha-publicacion"] . "<br>";
                 echo "Fecha de realización: " . $row["fecha-realizacion"] . "<br>";
                 echo "Sección: " . $row["seccion"] . "<br>";
-                echo "Capacidad: " . $row["capacidad"] . "<br>";
+                echo "Capacidad: ". $cantidad. "/" . $row["capacidad"] . "<br>";
                 echo "Aula: " . $row["Aula"] . "<br>";
                 echo "<hr>";
             }
