@@ -207,7 +207,7 @@
                     if (isset($row["fecha_fin"])){
                         echo "fecha fin: " . $row["fecha_fin"] . "<br>";
                     }else{
-                        echo "fecha fin: ". '<form action="" method="post"><input type="submit" name="submit" value="'.$row['id'].'"></form>';
+                        echo "fecha fin: ". '<form action="../assets/forms/fin.php" method="post"><input type="submit" name="submit" value="'.$row['id'].'"></form>';
                     }
                     
                     echo "<hr>";
