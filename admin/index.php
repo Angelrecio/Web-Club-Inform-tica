@@ -1,3 +1,21 @@
+<?php
+    // importar el archivo de conexion con la base de datos
+    require "../assets/request/conexion.php";
+
+    function get_id_count($id, $conn) {
+        $stmt = mysqli_prepare($conn, 'SELECT COUNT(*) FROM talleresusuarios WHERE id_taller = ?;');
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $count);
+        mysqli_stmt_fetch($stmt);
+        if (!isset($count)){
+            $count = 0;
+        }
+        return $count;
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +46,57 @@
         <a class = Subboton id="AnadirTalleres" href="#anadir_talleres">Añadir talleres</a>
     </nav>
     <div class = ver_talleres id="VerTalleresSub">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut id labore sapiente modi! Iste mollitia, quia rerum aliquam quis, deserunt vitae, asperiores veniam in voluptates neque impedit! Ipsa, minus.</p>
+    <?php
+        // Realiza la consulta a la base de datos
+        $query = "SELECT * FROM talleres";
+        $result = mysqli_query($conn, $query);
+
+        // Verifica si la consulta obtuvo resultados
+        if (mysqli_num_rows($result) > 0) {
+            // Recorre cada fila de los resultados
+            while ($row = mysqli_fetch_assoc($result)) {
+                $cantidad = get_id_count($row['id'], $conn);
+                
+                // Muestra los datos de cada fila
+                echo "Título: " . $row["titulo"] . "<br>";
+                echo "Descripción: " . $row["descripción"] . "<br>";
+                echo "Fecha de publicación: " . $row["Fecha-publicacion"] . "<br>";
+                echo "Fecha de realización: " . $row["fecha-realizacion"] . "<br>";
+                echo "Sección: " . $row["seccion"] . "<br>";
+                echo "Capacidad: ". $cantidad. "/" . $row["capacidad"] . "<br>";
+                echo "Aula: " . $row["Aula"] . "<br>";
+                echo "<hr>";
+            }
+        } else {
+            echo "No se encontraron resultados";
+        }
+
+        // Cierra la conexion con la base de datos
+        mysqli_close($conn);
+    ?>
     </div>
     <div class = anadir_talleres id = "AnadirTalleresSub">
-        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <form method="post" action="../assets/forms/anadirtaller.php">
+            <div class="row">
+                <div class="col-12 col-12-mobilep">
+                    <input type="text" name="name" placeholder="Nombre completo" require />
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <input type="number" name="n_expediente" placeholder="n_expediente" require/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <input type="email" name="email" placeholder="Email" require/>
+                </div>
+                <div class="col-12">
+                    <textarea name="message" require placeholder="¿Por que te gustaria unirte al club?" rows="6"></textarea>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="Enviar" name="submit"/></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 <br>

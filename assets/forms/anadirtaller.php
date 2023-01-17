@@ -1,0 +1,39 @@
+<?php
+require "../request/conexion.php";
+include "../functions/functs.php";
+
+
+if (isset($_POST['submit'])) {
+    echo "<br>";
+
+    $nombre = capitalizeFirstLetter($_POST['nombre']);
+    $apellido1 = capitalizeFirstLetter($_POST['apellido1']);
+    $apellido2 = capitalizeFirstLetter($_POST['apellido2']);
+    $n_exp = $_POST['nexp'];
+    $email = capitalizeFirstLetter($_POST['email']);
+    $role = $_POST['rol'];
+    
+    // Crear un hash de contraseña
+    $password_hash = md5($n_exp);
+
+    // Prepare the SQL statement
+    $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, nexp, email, pass, rol) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "Error: failed to prepare the SQL statement";
+    } else {
+        // Bind the parameters to the placeholders in the SQL statement
+        mysqli_stmt_bind_param($stmt, "sssissi", $nombre, $apellido1, $apellido2, $n_exp, $email, $password_hash, $role);
+
+        // Execute the SQL statement
+        if (mysqli_stmt_execute($stmt)) {
+            echo "Usuario creado con éxito";
+            header("Location: /");
+        } else {
+            echo "Error: failed to execute the SQL statement";
+            header("Location: /registro.php");
+        }
+        
+    }
+}
+?>
