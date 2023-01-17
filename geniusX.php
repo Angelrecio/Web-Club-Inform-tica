@@ -53,49 +53,64 @@ if (isset($_COOKIE["Block"])){
     <p>Con GeniusX pretendemos que todos los alumnos que tengan un proyecto en mente puedan llevarlo a cabo junto otros compañeros y así aprender, innovar y tener una primera toma de contacto con el mundo laboral. Todos los alumnos tienen voz y voto incluyendo algunos que deseen asomarse en el mundo de la informática aun sin ser expresamente de una carrera relacionada con el ámbito, con esto, y enseñando desde 0 a través de talleres a los alumnos podemos dar accesibilidad al desarrollo de proyectos además de la visibilidad que nos da la Universidad Europea</p>
 </div>
 <br>
-<div class = proyectos_anteriores id="proant">
+<div class = proyectos_anteriores id="proant" style="color: white;">
 <?php
-        // Realiza la consulta a la base de datos
-    $query = "SELECT * FROM proyecto WHERE fecha_fin= NULL";
-        $result = mysqli_query($conn, $query);
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM proyecto WHERE 'fecha_fin' IS NOT NULL";
+            $result = mysqli_query($conn, $query);
 
-        // Verifica si la consulta obtuvo resultados
-        if (mysqli_num_rows($result) > 0) {
-            // Recorre cada fila de los resultados
-            while ($row = mysqli_fetch_assoc($result)) {
-              // Muestra los datos de cada fila
-            echo "<h2 class=titulo >". $row["titulo"] . "</h1>";
-            echo "<p class=descripcion>".$row["descripcion"]."</p>";
-            echo "<p>Lenguajes requeridos:".$row["lenguajes"]."</p>";
-            echo "<a class = boton_join>Únete</a> ";               
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Muestra los datos de cada fila
+                    echo "Título: " . $row["titulo"] . "<br>";
+                    echo "Descripción: " . $row["descripcion"] . "<br>";
+                    echo "lenguajes: " . $row["lenguajes"] . "<br>";
+                    echo "capacidad: " . $row["capacidad"] . "<br>";
+                    echo "capacidad: " . $row["capacidad"] . "<br>";
+                    echo "fecha inicio: " . $row["fecha_inicio"] . "<br>";
+                    if (isset($row["fecha_fin"])){
+                        echo "fecha fin: " . $row["fecha_fin"] . "<br>";
+                    }else{
+                        echo "fecha fin: ". '<form action="../assets/forms/fin.php" method="post"><input type="submit" name="submit" value="'.$row['id'].'"></form>';
+                    }
+                    
+                    echo "<hr>";
+                }
+            } else {
+                echo "No se encontraron resultados";
             }
-        } else {
-            echo  "<p>No se encontraron resultados</p>";
-        }
-    ?> 
+    ?>
 </div>
-<div class = proyectos_en_curso id="proyect">
-<?php 
-        // Realiza la consulta a la base de datos
-        $query = "SELECT * FROM proyecto WHERE fecha_fin != NULL";
-        $result = mysqli_query($conn, $query);
+<div class = proyectos_en_curso id="proyect" style="color: white;" >
+<?php
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM proyecto  WHERE 'fecha_fin' IS NULL";
+            $result = mysqli_query($conn, $query);
 
-        // Verifica si la consulta obtuvo resultados
-        if (mysqli_num_rows($result) > 0) {
-            // Recorre cada fila de los resultados
-            while ($row = mysqli_fetch_assoc($result)) {
-              // Muestra los datos de cada fila
-            echo "<h2 class=titulo >". $row["titulo"] . "</h1>";
-            echo "<p class= descripcion>".$row["descripcion"]."</p>";
-            echo "<p>Lenguajes requeridos:".$row["lenguajes"]."</p>";
-            echo "<a class = boton_join>Únete</a><hr> ";               
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Muestra los datos de cada fila
+                    echo "Título: " . $row["titulo"] . "<br>";
+                    echo "Descripción: " . $row["descripcion"] . "<br>";
+                    echo "lenguajes: " . $row["lenguajes"] . "<br>";
+                    echo "capacidad: " . $row["capacidad"] . "<br>";
+                    echo "capacidad: " . $row["capacidad"] . "<br>";
+                    echo "fecha inicio: " . $row["fecha_inicio"] . "<br>";
+                    if (isset($row["fecha_fin"])){
+                        echo "fecha fin: " . $row["fecha_fin"] . "<br>";
+                    }else{
+                        echo "fecha fin: ". '<form action="../assets/forms/fin.php" method="post"><input type="submit" name="submit" value="'.$row['id'].'"></form>';
+                    }
+                    
+                    echo "<hr>";
+                }
+            } else {
+                echo "No se encontraron resultados";
             }
-        } else {
-            echo "<p>No se encontraron resultados</p>";
-        }
-
-        // Cierra la conexion con la base de datos
-        mysqli_close($conn);
     ?>
 </div>
 </div>
