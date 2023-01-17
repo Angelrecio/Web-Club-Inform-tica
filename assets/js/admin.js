@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-  $("#talleres1").click(function(){
+  $("#Talleres1").click(function(){
     $("#tallerSub").slideToggle("slow")
     $("#HacknetSub").slideUp("slow")
     $("#Programacion_CompetitivaSub").slideUp("slow")
@@ -14,7 +14,7 @@ $(document).ready(function(){
     $("#GeniusXSub").slideUp("slow")
     $("#UsuariosSub").slideUp("slow")
   });
-  $("#Programacion_Competitiva").click(function(){
+  $("#Programacion_Competitiva1").click(function(){
     $("#Programacion_CompetitivaSub").slideToggle("slow")
     $("#tallerSub").slideUp("slow")
     $("#HacknetSub").slideUp("slow")

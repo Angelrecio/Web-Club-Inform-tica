@@ -21,6 +21,12 @@ body {
     justify-content: center;
 }
 
+#Submenu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 
 h1 {
     font-family: 'Kdam Thmor Pro', sans-serif;
@@ -35,6 +41,16 @@ h2 {
     display: flex;
     align-items: center;
     background-color: #fe2f2f;
+    border-color: rgb(183, 0, 255);
+    border: 100ch;
+    padding: 1.2%;
+    margin: 1%;
+}
+
+.Subboton{
+    display: flex;
+    align-items: center;
+    background-color: #00ff00;
     border-color: rgb(183, 0, 255);
     border: 100ch;
     padding: 1.2%;
@@ -65,7 +81,7 @@ p{
     margin: 1%;
 	width : auto;
 	height : 100%;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(255, 255, 255);
     padding: 1%;
 }
 a{
@@ -86,7 +102,7 @@ a:focus{
     margin: 1%;
 	width : auto;
 	height : 100%;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(134, 95, 95);
 }
 
 .logo_proyecto{
@@ -101,10 +117,10 @@ a:focus{
 .titulo{
     padding: 1%;
 }
-
-#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSu, #UsuariosSubb {
+#tallerSub, #HacknetSub, #Programacion_CompetitivaSub, #GeniusXSub, #UsuariosSub {
     display: none;
 }
+
 
 .presentacion:focus{
     display:contents;
