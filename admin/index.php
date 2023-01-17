@@ -77,7 +77,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['id'] != 1){
             while ($row = mysqli_fetch_assoc($result)){
                 $cantidad = get_id_count($row['id'], $conn);
                 
-               echo '<div style="display: flex; justify-content: space-evenly;">';
+               echo '<div style="display: flex; justify-content: space-between;">';
                 echo '<div class="info" style="display: block;">';
 
    
