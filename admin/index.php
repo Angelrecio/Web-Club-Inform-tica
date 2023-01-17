@@ -128,7 +128,15 @@
     ?>
     </div>
     <div class = anadir_competicionesHacknet id = "AnadirCompeticionesHacknetSub">
-        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <form method="post" action="../assets/forms/anadirhacknet.php">
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion"></textarea><br>
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link"><br>
+            <input type="submit" value="Insertar Hacknet" name="submit">
+        </form>
     </div>
 </div>
 <div class = Programacion_Competitiva id="Programacion_CompetitivaSub">
@@ -159,7 +167,15 @@
         ?>
     </div>
     <div class = anadir_competicionesCompetitiva id = "AnadirCompeticionesCompetitivaSub">
-        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <form method="post" action="../assets/forms/anadirranked.php">
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion"></textarea><br>
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link"><br>
+            <input type="submit" value="Insertar competición" name="submit">
+        </form>
     </div>
 
 </div>
