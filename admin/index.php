@@ -83,12 +83,18 @@
             <textarea id="descripcion" name="descripcion"></textarea><br>
             <label for="fecha-realizacion">Fecha de realización:</label>
             <input type="datetime-local" id="fecha-realizacion" name="fecha-realizacion"><br>
-            <label for="seccion">Sección:</label>
-            <input type="number" id="seccion" name="seccion"><br>
             <label for="capacidad">Capacidad:</label>
             <input type="number" id="capacidad" name="capacidad"><br>
             <label for="Aula">Aula:</label>
             <input type="text" id="Aula" name="Aula"><br>
+            <label for="seccion">Secion:</label>
+            <select name="seccion" id="seccion">
+                <option value="0">General</option>
+                <option value="1">Hacknet</option>
+                <option value="2">Programacion competitiva</option>
+            </select>
+            <br>
+
             <input type="submit" value="Insertar taller" name="submit">
         </form>
     </div>
@@ -176,6 +182,7 @@
         <select name="rol" id="rol">
           <option value="0">Estudiante</option>
           <option value="1">Adminitrador</option>
+        </select>
         <br>
         
         <input type="submit" value="registrar" name="submit">
