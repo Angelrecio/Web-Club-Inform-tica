@@ -16,7 +16,7 @@
     <h1>Talleres</h1>
     <?php
         // Realiza la consulta a la base de datos
-        $query = "SELECT * FROM usuarios";
+        $query = "SELECT * FROM hacknet";
         $result = mysqli_query($conn, $query);
 
         // Verifica si la consulta obtuvo resultados
@@ -25,12 +25,12 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 // Muestra los datos de cada fila
                 echo "Título: " . $row["id"] . "<br>";
-                echo "Descripción: " . $row["nombre"] . "<br>";
-                echo "Fecha de publicación: " . $row["apellido1"] . "<br>";
-                echo "Fecha de realización: " . $row["nexp"] . "<br>";
-                echo "Sección: " . $row["email"] . "<br>";
-                echo "Capacidad: " . $row["pass"] . "<br>";
-                echo "Aula: " . $row["rol"] . "<br>";
+                echo "Descripción: " . $row["titulo"] . "<br>";
+                echo "Fecha de publicación: " . $row["descripcion"] . "<br>";
+                echo "Fecha de realización: " . $row["link"] . "<br>";
+                //echo "Sección: " . $row["email"] . "<br>";
+                //echo "Capacidad: " . $row["pass"] . "<br>";
+                //echo "Aula: " . $row["rol"] . "<br>";
                 echo "<hr>";
             }
         } else {

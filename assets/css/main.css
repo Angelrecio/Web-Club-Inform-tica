@@ -3335,7 +3335,6 @@ input, select, textarea {
 		margin: 1%;
 		width : auto;
 		height : 100%;
-		background-color: rgb(247, 235, 235);
 	}
 	.elemento{
 		background-color: whitesmoke;
@@ -3442,4 +3441,8 @@ input, select, textarea {
 		border-radius: 5px;
 		color:rgb(255, 255, 255);
 		transition: all 0.5s;
+	}
+
+	.hack{
+
 	}

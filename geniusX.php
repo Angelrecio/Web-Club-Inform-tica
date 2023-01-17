@@ -39,12 +39,13 @@ if (isset($_COOKIE["Block"])){
     </div>
     </header>
     <nav id = Menu_cabecera>
-        <a class = Boton_cabecera id="present" href="#presentacion" >Inicio</i></a>
+        <a class = Boton_cabecera id="present" href="#presentacion" >Inicio</a>
         <a class = Boton_cabecera id="proyecto_ant" href="#proyectos_anteriores">Proyectos anteriores</a>
         <a class = Boton_cabecera id="proyec_curso" href="#proyectos_en_curso">Proyectos en curso</a>
         <a class = Boton_cabecera id="propues" href="#proponer_proyecto">Proponer proyecto</a>
         <a class = Boton_cabecera href="/">Volver a C-Int</a>        
-    </nav> <br>
+    </nav> 
+    <br>
 <div class = presentacion id="presentac">
     <h1>Presentación:</h1>
     <br><br>
@@ -87,7 +88,7 @@ if (isset($_COOKIE["Block"])){
             echo "<h2 class=titulo >". $row["titulo"] . "</h1>";
             echo "<p class= descripcion>".$row["descripcion"]."</p>";
             echo "<p>Lenguajes requeridos:".$row["lenguajes"]."</p>";
-            echo "<a class = boton_join>Únete</a> ";               
+            echo "<a class = boton_join>Únete</a><hr> ";               
             }
         } else {
             echo "<p>No se encontraron resultados</p>";

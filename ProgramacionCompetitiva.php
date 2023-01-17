@@ -2,6 +2,8 @@
 if (isset($_COOKIE["Block"])){
 	header("Location: /");
 }
+
+require "assets/request/conexion.php"
 ?>
 
 
@@ -32,28 +34,38 @@ if (isset($_COOKIE["Block"])){
 </div>
 <br>
 <div class = actividades_en_curso>
+<h1 style="margin: 1.2%;">Competiciones</h1>
 <?php
-        // Realiza la consulta a la base de datos
-        $query = "SELECT * FROM ranked";
-        $result = mysqli_query($conn, $query);
+            // Realiza la consulta a la base de datos
+            $query = "SELECT * FROM ranked";
+            $result = mysqli_query($conn, $query);
+            $count = 0;
+            // Verifica si la consulta obtuvo resultados
+            if (mysqli_num_rows($result) > 0) {
+                // Recorre cada fila de los resultados
+                while ($row = mysqli_fetch_assoc($result)) {
+                    if ($count % 2 == 0){
+                        echo '<section class="feature left">';
+                    }else{
+                        echo '<section class="feature right">';
+                    }
+                    // Muestra los datos de cada fila
+                    echo "<a href=".$row["link"].' class="image icon solid fa-feather"><img src="images/header2.png" alt="" width="50%"/></a>';
+                    echo '<div class="content">';
+                    echo '<h3>'.$row["titulo"].'</h3>';
+                    echo '<p>'.$row["descripcion"].'</p>';
+                    echo "</div>";
+                    echo "</section>"; 
 
-        // Verifica si la consulta obtuvo resultados
-        if (mysqli_num_rows($result) > 0) {
-            // Recorre cada fila de los resultados
-            while ($row = mysqli_fetch_assoc($result)) {
-              // Muestra los datos de cada fila
-            echo "<div class = elemento>";
-            echo "<h2 class=titulo>". $row["titulo"] . "</h2>";
-            echo "<p class = texto_descripcion>".$row["descripcion"]."</p>";
-            echo "<a href=".$row["enlace"]." class = boton_join>Únete</a> ";             
+                    $count++;
+                }
+            } else {
+                echo "<p>No se encontraron resultados</p>";
             }
-        } else {
-            echo "<p>No se encontraron resultados</p>";
-        }
 
-        // Cierra la conexion con la base de datos
-        mysqli_close($conn);
-    ?>
+            // Cierra la conexion con la base de datos
+            mysqli_close($conn);
+        ?>
     </div>
 </div>
 <br>
