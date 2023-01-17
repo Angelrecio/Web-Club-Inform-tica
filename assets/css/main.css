@@ -3397,7 +3397,7 @@ input, select, textarea {
 		background-size: 3200px 460px;
 		color: rgba(255, 255, 255, 0.8);
 
-		margin-top: -300px;
+		margin-top: -320px;
 		padding: calc(460px + 6em) 0 10em 0;
 		position: relative;
 		text-align: center;
@@ -3443,6 +3443,6 @@ input, select, textarea {
 		transition: all 0.5s;
 	}
 
-	.hack{
-
-	}
+.taller{
+	margin-left: 10px;
+}

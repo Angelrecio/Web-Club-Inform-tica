@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
         } else {
         $error = "Nombre de usuario o contraseña incorrectos";
         $_SESSION['count']++;
-        echo $error;
+        //echo $error;
         if($_SESSION['count'] == 5){
             setcookie("Block", true, time() + (60*10), "/");  // 10 mins
             header("Location: /");
@@ -62,11 +62,6 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body style=" flex-direction: column; background-color: rgb(222, 56, 49);">
-
-        <?php
-        
-		?>
-
     <?php 
     ?>
     <form method="post" action="login.php">
@@ -85,9 +80,11 @@ if (isset($_POST['submit'])) {
                 <br>
                 <br>
                 <input type="submit" class = "login" name="submit" value="Iniciar sesión">
+                <?php
+                    echo "<br>".$error;
+                ?>
             </div>
         </div>
-        <span><?php echo $error; ?></span>
     </form>
 </body>
 </html>

@@ -1,4 +1,12 @@
 <?php
+if (isset($_COOKIE["Block"])){
+	header("Location: /");
+}
+
+session_start();
+if(!isset($_SESSION['rol']) or $_SESSION['id'] != 1){
+    header("Location: /");
+}
     // importar el archivo de conexion con la base de datos
     require "../assets/request/conexion.php";
 
@@ -14,6 +22,18 @@
         return $count;
     }
     
+    function getUsersInWorkshop($workshop_id, $conn) {
+        $stmt = $conn->prepare('SELECT id_usuario FROM talleresusuarios WHERE id_taller = ?');
+        $stmt->bind_param("i", $workshop_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $users = array();
+        while ($row = $result->fetch_assoc()) {
+            $users[] = $row['id_usuario'];
+        }
+        return $users;
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -56,22 +76,49 @@
             // Recorre cada fila de los resultados
             while ($row = mysqli_fetch_assoc($result)) {
                 $cantidad = get_id_count($row['id'], $conn);
-                
-                // Muestra los datos de cada fila
-                echo "Título: " . $row["titulo"] . "<br>";
-                echo "Descripción: " . $row["descripción"] . "<br>";
-                echo "Fecha de publicación: " . $row["Fecha-publicacion"] . "<br>";
-                echo "Fecha de realización: " . $row["fecha-realizacion"] . "<br>";
-                echo "Sección: " . $row["seccion"] . "<br>";
-                echo "Capacidad: ". $cantidad. "/" . $row["capacidad"] . "<br>";
-                echo "Aula: " . $row["Aula"] . "<br>";
+                ?>
+                <div style="display: flex; justify-content: space-evenly;">
+                    <div class="info" style="display: block;">
+
+    <?php
+                    // Muestra los datos de cada fila
+                    echo "Título: " . $row["titulo"] . "<br>";
+                    echo "Descripción: " . $row["descripcion"] . "<br>";
+                    echo "Fecha de publicación: " . $row["Fecha-publicacion"] . "<br>";
+                    echo "Fecha de realización: " . $row["fecha-realizacion"] . "<br>";
+                    echo "Sección: " . $row["seccion"] . "<br>";
+                    echo "Capacidad: ". $cantidad. "/" . $row["capacidad"] . "<br>";
+                    echo "Aula: " . $row["Aula"] . "<br>";
+                    
+
+                    ?>
+                    </div>
+                    <div class="lista" style="display: block;">
+                    <?php
+                    echo "Lista:<br>";
+                    foreach(getUsersInWorkshop($row['id'],$conn) as $id){
+                        $query = "SELECT nombre, apellido1 as app1, apellido2 as app2 FROM usuarios WHERE id = $id";
+                        $result = mysqli_query($conn, $query);
+
+                        // Verifica si la consulta obtuvo resultados
+                        if (mysqli_num_rows($result) > 0) {
+                            // Recorre cada fila de los resultados
+                            while ($name = mysqli_fetch_assoc($result)){
+                                echo $name['nombre']. " ". $name['app1']. " ". $name['app2'];
+                                echo "<br>";
+                            }
+                    }
+                }
+                    ?>
+                    </div>
+                </div>
+    <?php
                 echo "<hr>";
             }
         } else {
             echo "No se encontraron resultados";
         }
 
-        // Cierra la conexion con la base de datos
     ?>
     </div>
     <div class = anadir_talleres id = "AnadirTalleresSub">
@@ -118,7 +165,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 // Muestra los datos de cada fila
                 echo "Título: " . $row["titulo"] . "<br>";
-                echo "Descripción: " . $row["descripción"] . "<br>";
+                echo "Descripción: " . $row["descripcion"] . "<br>";
                 echo "Enlace: " . $row["link"] . "<br>";
                 echo "<hr>";
             }
@@ -157,7 +204,7 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     // Muestra los datos de cada fila
                     echo "Título: " . $row["titulo"] . "<br>";
-                    echo "Descripción: " . $row["descripción"] . "<br>";
+                    echo "Descripción: " . $row["descripcion"] . "<br>";
                     echo "Enlace: " . $row["link"] . "<br>";
                     echo "<hr>";
                 }
@@ -199,7 +246,7 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     // Muestra los datos de cada fila
                     echo "Título: " . $row["titulo"] . "<br>";
-                    echo "Descripción: " . $row["descripción"] . "<br>";
+                    echo "Descripción: " . $row["descripcion"] . "<br>";
                     echo "lenguajes: " . $row["lenguajes"] . "<br>";
                     echo "capacidad: " . $row["capacidad"] . "<br>";
                     echo "capacidad: " . $row["capacidad"] . "<br>";
@@ -220,7 +267,7 @@
     <div class = ver_sugerencias id = "VerSugerenciasSub" href = >
         <?php
             // Realiza la consulta a la base de datos
-            $query = "SELECT * FROM proponerproyecto";
+            $query = "SELECT proponerproyecto.nombre, proponerproyecto.ideaproyecto, proponerproyecto.materiales, usuarios.nombre as uname, usuarios.apellido1, usuarios.apellido2, usuarios.nexp, usuarios.email FROM proponerproyecto JOIN usuarios ON proponerproyecto.id_usuario = usuarios.id;";
             $result = mysqli_query($conn, $query);
 
             // Verifica si la consulta obtuvo resultados
@@ -228,9 +275,14 @@
                 // Recorre cada fila de los resultados
                 while ($row = mysqli_fetch_assoc($result)) {
                     // Muestra los datos de cada fila
-                    echo "Nomnbre proyecto: " . $row["nombre"] . "<br>";
+                    echo "Nombre proyecto: " . $row["nombre"] . "<br>";
                     echo "La gran idea de proyecto: " . $row["ideaproyecto"] . "<br>";
                     echo "Materiales: " . $row["materiales"] . "<br>";
+                    echo "Nombre del usuario: " . $row["uname"] . "<br>";
+                    echo "1º apellido: " . $row["apellido1"] . "<br>";
+                    echo "2º apellido: " . $row["apellido2"] . "<br>";
+                    echo "Nº expediente: " . $row["nexp"] . "<br>";
+                    echo "Correo de contacto: " . $row["email"] . "<br>";
                     echo "<hr>";
                 }
             } else {

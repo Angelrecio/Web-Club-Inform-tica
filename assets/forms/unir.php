@@ -1,6 +1,9 @@
 <?php
 require "../request/conexion.php";
 include "../functions/functs.php";
+session_start();
+
+$user = $_SESSION['id'];
 
 $error = "";
 $id = $_POST['submit'];
@@ -10,10 +13,8 @@ echo 0;
 if (isset($id)) {
     echo 1;
 
-    $date = date("Y-m-d");
-    $sql = "UPDATE proyecto SET fecha_fin = '$date' WHERE id=$id;";
+    $sql = "INSERT INTO talleresusuarios (id_usuario, id_taller) VALUES ('$user', '$id')";
     echo $sql;
-    
 
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -21,10 +22,10 @@ if (isset($id)) {
     } else {
         // Execute the SQL statement
         if (mysqli_stmt_execute($stmt)) {
-            echo "Proyecto finalizado con éxito";
-            header("Location: ../../admin/");
+            echo "Te has unido con exito con éxito";
+            header("Location: /");
         } else {
-            $error = "Error: El fin del proyecto a fallado";
+            $error = "Error: unirte a fallado";
             sleep(3);
         }
     }
